@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="atem-test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="grammar\AtemLexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="grammar\AtemParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="grammar\AtemParserBaseListener.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="grammar\AtemParserListener.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="antlr4-runtime\atn\ActionTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\AmbiguityInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ArrayPredictionContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNConfigSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNDeserializationOptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNDeserializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNStateType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ATNType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\AtomTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\BasicBlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\BasicState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\BlockEndState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\BlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ContextSensitivityInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\DecisionEventInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\DecisionInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\DecisionState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\EpsilonTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ErrorInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerActionExecutor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerActionType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerATNConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerChannelAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerCustomAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerIndexedCustomAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerModeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerMoreAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerPopModeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerPushModeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerSkipAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LexerTypeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LL1Analyzer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LookaheadEventInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\LoopEndState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\NotSetTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\OrderedATNConfigSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ParseInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ParserATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ParserATNSimulatorOptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PlusBlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PlusLoopbackState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PrecedencePredicateTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredicateEvalInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredicateTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredictionContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextCache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextMergeCache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextMergeCacheOptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\PredictionMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\ProfilingATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\RangeTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\RuleStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\RuleStopState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\RuleTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\SemanticContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\SemanticContextType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\SerializedATNView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\SetTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\SingletonPredictionContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\StarBlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\StarLoopbackState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\StarLoopEntryState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\TokensStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\Transition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\TransitionType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\atn\WildcardTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\dfa\DFA.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\dfa\DFASerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\dfa\DFAState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\dfa\LexerDFASerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\internal\Synchronization.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\misc\InterpreterDataReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\misc\Interval.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\misc\IntervalSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\misc\MurmurHash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\misc\Predicate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\Any.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\Arrays.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\BitSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\Casts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\CPPUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\StringUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\Unicode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\support\Utf8.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\Chunk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\ParseTreeMatch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\ParseTreePattern.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\ParseTreePatternMatcher.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\RuleTagToken.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\TagChunk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\TextChunk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\pattern\TokenTagToken.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathLexer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathLexerErrorListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathRuleAnywhereElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathRuleElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathTokenAnywhereElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathTokenElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathWildcardAnywhereElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathWildcardElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\AbstractParseTreeVisitor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ErrorNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ErrorNodeImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\IterativeParseTreeWalker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ParseTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeProperty.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeVisitor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeWalker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\TerminalNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\TerminalNodeImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="antlr4-runtime\tree\Trees.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ActionTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\AmbiguityInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ArrayPredictionContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATN.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNConfigSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNDeserializationOptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNDeserializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNStateType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ATNType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\AtomTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\BasicBlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\BasicState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\BlockEndState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\BlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ContextSensitivityInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\DecisionEventInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\DecisionInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\DecisionState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\EpsilonTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ErrorInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerActionExecutor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerActionType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerATNConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerChannelAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerCustomAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerIndexedCustomAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerModeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerMoreAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerPopModeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerPushModeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerSkipAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LexerTypeAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LL1Analyzer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LookaheadEventInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\LoopEndState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\NotSetTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\OrderedATNConfigSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ParseInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ParserATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ParserATNSimulatorOptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PlusBlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PlusLoopbackState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PrecedencePredicateTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredicateEvalInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredicateTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredictionContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredictionContextCache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredictionContextMergeCache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredictionContextMergeCacheOptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredictionContextType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\PredictionMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\ProfilingATNSimulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\RangeTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\RuleStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\RuleStopState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\RuleTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\SemanticContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\SemanticContextType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\SerializedATNView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\SetTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\SingletonPredictionContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\StarBlockStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\StarLoopbackState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\StarLoopEntryState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\TokensStartState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\Transition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\TransitionType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atn\WildcardTransition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="grammar\AtemLexer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="grammar\AtemParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="grammar\AtemParserBaseListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="grammar\AtemParserListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{ef6eb845-14c8-4626-af8a-09f8bb71dfe3}</ProjectGuid>
+    <RootNamespace>atemtest</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\vcpkg\installed\x64-windows-static\include\antlr4-runtime\</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);antlr4-runtime.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);ANTLR4CPP_STATIC</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);E:\vcpkg\installed\x64-windows-static\lib\antlr4-runtime-static.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="atem-test.cpp" />
+    <ClCompile Include="grammar\AtemLexer.cpp" />
+    <ClCompile Include="grammar\AtemParser.cpp" />
+    <ClCompile Include="grammar\AtemParserBaseListener.cpp" />
+    <ClCompile Include="grammar\AtemParserListener.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="antlr4-runtime\atn\ActionTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\AmbiguityInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\ArrayPredictionContext.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATN.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNConfig.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNConfigSet.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNDeserializationOptions.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNDeserializer.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNSimulator.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNState.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNStateType.h" />
+    <ClInclude Include="antlr4-runtime\atn\ATNType.h" />
+    <ClInclude Include="antlr4-runtime\atn\AtomTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\BasicBlockStartState.h" />
+    <ClInclude Include="antlr4-runtime\atn\BasicState.h" />
+    <ClInclude Include="antlr4-runtime\atn\BlockEndState.h" />
+    <ClInclude Include="antlr4-runtime\atn\BlockStartState.h" />
+    <ClInclude Include="antlr4-runtime\atn\ContextSensitivityInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\DecisionEventInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\DecisionInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\DecisionState.h" />
+    <ClInclude Include="antlr4-runtime\atn\EpsilonTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\ErrorInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerActionExecutor.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerActionType.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerATNConfig.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerATNSimulator.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerChannelAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerCustomAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerIndexedCustomAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerModeAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerMoreAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerPopModeAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerPushModeAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerSkipAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LexerTypeAction.h" />
+    <ClInclude Include="antlr4-runtime\atn\LL1Analyzer.h" />
+    <ClInclude Include="antlr4-runtime\atn\LookaheadEventInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\LoopEndState.h" />
+    <ClInclude Include="antlr4-runtime\atn\NotSetTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\OrderedATNConfigSet.h" />
+    <ClInclude Include="antlr4-runtime\atn\ParseInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\ParserATNSimulator.h" />
+    <ClInclude Include="antlr4-runtime\atn\ParserATNSimulatorOptions.h" />
+    <ClInclude Include="antlr4-runtime\atn\PlusBlockStartState.h" />
+    <ClInclude Include="antlr4-runtime\atn\PlusLoopbackState.h" />
+    <ClInclude Include="antlr4-runtime\atn\PrecedencePredicateTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredicateEvalInfo.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredicateTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredictionContext.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextCache.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextMergeCache.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextMergeCacheOptions.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredictionContextType.h" />
+    <ClInclude Include="antlr4-runtime\atn\PredictionMode.h" />
+    <ClInclude Include="antlr4-runtime\atn\ProfilingATNSimulator.h" />
+    <ClInclude Include="antlr4-runtime\atn\RangeTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\RuleStartState.h" />
+    <ClInclude Include="antlr4-runtime\atn\RuleStopState.h" />
+    <ClInclude Include="antlr4-runtime\atn\RuleTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\SemanticContext.h" />
+    <ClInclude Include="antlr4-runtime\atn\SemanticContextType.h" />
+    <ClInclude Include="antlr4-runtime\atn\SerializedATNView.h" />
+    <ClInclude Include="antlr4-runtime\atn\SetTransition.h" />
+    <ClInclude Include="antlr4-runtime\atn\SingletonPredictionContext.h" />
+    <ClInclude Include="antlr4-runtime\atn\StarBlockStartState.h" />
+    <ClInclude Include="antlr4-runtime\atn\StarLoopbackState.h" />
+    <ClInclude Include="antlr4-runtime\atn\StarLoopEntryState.h" />
+    <ClInclude Include="antlr4-runtime\atn\TokensStartState.h" />
+    <ClInclude Include="antlr4-runtime\atn\Transition.h" />
+    <ClInclude Include="antlr4-runtime\atn\TransitionType.h" />
+    <ClInclude Include="antlr4-runtime\atn\WildcardTransition.h" />
+    <ClInclude Include="antlr4-runtime\dfa\DFA.h" />
+    <ClInclude Include="antlr4-runtime\dfa\DFASerializer.h" />
+    <ClInclude Include="antlr4-runtime\dfa\DFAState.h" />
+    <ClInclude Include="antlr4-runtime\dfa\LexerDFASerializer.h" />
+    <ClInclude Include="antlr4-runtime\internal\Synchronization.h" />
+    <ClInclude Include="antlr4-runtime\misc\InterpreterDataReader.h" />
+    <ClInclude Include="antlr4-runtime\misc\Interval.h" />
+    <ClInclude Include="antlr4-runtime\misc\IntervalSet.h" />
+    <ClInclude Include="antlr4-runtime\misc\MurmurHash.h" />
+    <ClInclude Include="antlr4-runtime\misc\Predicate.h" />
+    <ClInclude Include="antlr4-runtime\support\Any.h" />
+    <ClInclude Include="antlr4-runtime\support\Arrays.h" />
+    <ClInclude Include="antlr4-runtime\support\BitSet.h" />
+    <ClInclude Include="antlr4-runtime\support\Casts.h" />
+    <ClInclude Include="antlr4-runtime\support\CPPUtils.h" />
+    <ClInclude Include="antlr4-runtime\support\StringUtils.h" />
+    <ClInclude Include="antlr4-runtime\support\Unicode.h" />
+    <ClInclude Include="antlr4-runtime\support\Utf8.h" />
+    <ClInclude Include="antlr4-runtime\tree\AbstractParseTreeVisitor.h" />
+    <ClInclude Include="antlr4-runtime\tree\ErrorNode.h" />
+    <ClInclude Include="antlr4-runtime\tree\ErrorNodeImpl.h" />
+    <ClInclude Include="antlr4-runtime\tree\IterativeParseTreeWalker.h" />
+    <ClInclude Include="antlr4-runtime\tree\ParseTree.h" />
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeListener.h" />
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeProperty.h" />
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeType.h" />
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeVisitor.h" />
+    <ClInclude Include="antlr4-runtime\tree\ParseTreeWalker.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\Chunk.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\ParseTreeMatch.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\ParseTreePattern.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\ParseTreePatternMatcher.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\RuleTagToken.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\TagChunk.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\TextChunk.h" />
+    <ClInclude Include="antlr4-runtime\tree\pattern\TokenTagToken.h" />
+    <ClInclude Include="antlr4-runtime\tree\TerminalNode.h" />
+    <ClInclude Include="antlr4-runtime\tree\TerminalNodeImpl.h" />
+    <ClInclude Include="antlr4-runtime\tree\Trees.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPath.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathElement.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathLexer.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathLexerErrorListener.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathRuleAnywhereElement.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathRuleElement.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathTokenAnywhereElement.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathTokenElement.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathWildcardAnywhereElement.h" />
+    <ClInclude Include="antlr4-runtime\tree\xpath\XPathWildcardElement.h" />
+    <ClInclude Include="atn\ActionTransition.h" />
+    <ClInclude Include="atn\AmbiguityInfo.h" />
+    <ClInclude Include="atn\ArrayPredictionContext.h" />
+    <ClInclude Include="atn\ATN.h" />
+    <ClInclude Include="atn\ATNConfig.h" />
+    <ClInclude Include="atn\ATNConfigSet.h" />
+    <ClInclude Include="atn\ATNDeserializationOptions.h" />
+    <ClInclude Include="atn\ATNDeserializer.h" />
+    <ClInclude Include="atn\ATNSimulator.h" />
+    <ClInclude Include="atn\ATNState.h" />
+    <ClInclude Include="atn\ATNStateType.h" />
+    <ClInclude Include="atn\ATNType.h" />
+    <ClInclude Include="atn\AtomTransition.h" />
+    <ClInclude Include="atn\BasicBlockStartState.h" />
+    <ClInclude Include="atn\BasicState.h" />
+    <ClInclude Include="atn\BlockEndState.h" />
+    <ClInclude Include="atn\BlockStartState.h" />
+    <ClInclude Include="atn\ContextSensitivityInfo.h" />
+    <ClInclude Include="atn\DecisionEventInfo.h" />
+    <ClInclude Include="atn\DecisionInfo.h" />
+    <ClInclude Include="atn\DecisionState.h" />
+    <ClInclude Include="atn\EpsilonTransition.h" />
+    <ClInclude Include="atn\ErrorInfo.h" />
+    <ClInclude Include="atn\LexerAction.h" />
+    <ClInclude Include="atn\LexerActionExecutor.h" />
+    <ClInclude Include="atn\LexerActionType.h" />
+    <ClInclude Include="atn\LexerATNConfig.h" />
+    <ClInclude Include="atn\LexerATNSimulator.h" />
+    <ClInclude Include="atn\LexerChannelAction.h" />
+    <ClInclude Include="atn\LexerCustomAction.h" />
+    <ClInclude Include="atn\LexerIndexedCustomAction.h" />
+    <ClInclude Include="atn\LexerModeAction.h" />
+    <ClInclude Include="atn\LexerMoreAction.h" />
+    <ClInclude Include="atn\LexerPopModeAction.h" />
+    <ClInclude Include="atn\LexerPushModeAction.h" />
+    <ClInclude Include="atn\LexerSkipAction.h" />
+    <ClInclude Include="atn\LexerTypeAction.h" />
+    <ClInclude Include="atn\LL1Analyzer.h" />
+    <ClInclude Include="atn\LookaheadEventInfo.h" />
+    <ClInclude Include="atn\LoopEndState.h" />
+    <ClInclude Include="atn\NotSetTransition.h" />
+    <ClInclude Include="atn\OrderedATNConfigSet.h" />
+    <ClInclude Include="atn\ParseInfo.h" />
+    <ClInclude Include="atn\ParserATNSimulator.h" />
+    <ClInclude Include="atn\ParserATNSimulatorOptions.h" />
+    <ClInclude Include="atn\PlusBlockStartState.h" />
+    <ClInclude Include="atn\PlusLoopbackState.h" />
+    <ClInclude Include="atn\PrecedencePredicateTransition.h" />
+    <ClInclude Include="atn\PredicateEvalInfo.h" />
+    <ClInclude Include="atn\PredicateTransition.h" />
+    <ClInclude Include="atn\PredictionContext.h" />
+    <ClInclude Include="atn\PredictionContextCache.h" />
+    <ClInclude Include="atn\PredictionContextMergeCache.h" />
+    <ClInclude Include="atn\PredictionContextMergeCacheOptions.h" />
+    <ClInclude Include="atn\PredictionContextType.h" />
+    <ClInclude Include="atn\PredictionMode.h" />
+    <ClInclude Include="atn\ProfilingATNSimulator.h" />
+    <ClInclude Include="atn\RangeTransition.h" />
+    <ClInclude Include="atn\RuleStartState.h" />
+    <ClInclude Include="atn\RuleStopState.h" />
+    <ClInclude Include="atn\RuleTransition.h" />
+    <ClInclude Include="atn\SemanticContext.h" />
+    <ClInclude Include="atn\SemanticContextType.h" />
+    <ClInclude Include="atn\SerializedATNView.h" />
+    <ClInclude Include="atn\SetTransition.h" />
+    <ClInclude Include="atn\SingletonPredictionContext.h" />
+    <ClInclude Include="atn\StarBlockStartState.h" />
+    <ClInclude Include="atn\StarLoopbackState.h" />
+    <ClInclude Include="atn\StarLoopEntryState.h" />
+    <ClInclude Include="atn\TokensStartState.h" />
+    <ClInclude Include="atn\Transition.h" />
+    <ClInclude Include="atn\TransitionType.h" />
+    <ClInclude Include="atn\WildcardTransition.h" />
+    <ClInclude Include="grammar\AtemLexer.h" />
+    <ClInclude Include="grammar\AtemParser.h" />
+    <ClInclude Include="grammar\AtemParserBaseListener.h" />
+    <ClInclude Include="grammar\AtemParserListener.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
