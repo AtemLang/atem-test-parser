@@ -46,15 +46,21 @@ declaration_expression
 	| protocol_declaration
 	| union_declaration
 	| enum_declaration
+	| extension_declaration
 	| test_declaration
 	;
 
 test_declaration: KeywordTest attributes? test_name? code_block_no_label;
 test_name: string_literal;
 
-struct_declaration: KeywordStruct attributes? final_specifier? extension_list? initializer_list? deinitializer_list? member_list;
+struct_declaration: KeywordStruct udt_parameter_clause? attributes? final_specifier? extension_list? initializer_list? deinitializer_list? member_list;
 
-class_declaration: KeywordClass attributes? final_specifier? extension_list? initializer_list? deinitializer_list? member_list;
+class_declaration: KeywordClass udt_parameter_clause? attributes? final_specifier? extension_list? initializer_list? deinitializer_list? member_list;
+
+extension_declaration: KeywordExtend path_expression KeywordWith attributes? extension_list? initializer_list? deinitializer_list? member_list;
+
+udt_parameter_clause
+	: LeftParenthese function_parameter_list? RightParenthese;
 
 final_specifier: KeywordFinal;
 member_specifier
@@ -167,7 +173,7 @@ setter_parameter_clause: LeftParenthese setter_parameter RightParenthese;
 setter_parameter: setter_parameter_name (Colon type_annotation)?;
 setter_parameter_name: Identifier;
 
-protocol_declaration: KeywordProtocol attributes? final_specifier? protocol_extend_list? protocol_requirement_list;
+protocol_declaration: KeywordProtocol udt_parameter_clause? attributes? final_specifier? protocol_extend_list? protocol_requirement_list;
 protocol_extend_list: KeywordExtend LeftCurly RightCurly;
 protocol_requirement_list: KeywordMember LeftCurly protocol_requirement_items RightCurly;
 protocol_requirement_item
@@ -201,7 +207,7 @@ deinitializer_declaration: KeywordDeinit deinitializer_type code_block;
 
 union_declaration: KeywordUnion attributes? final_specifier?;
 
-enum_declaration: KeywordEnum attributes? final_specifier? extension_list? initializer_list? deinitializer_list? member_list? enumerator_list;
+enum_declaration: KeywordEnum udt_parameter_clause? attributes? final_specifier? extension_list? initializer_list? deinitializer_list? member_list? enumerator_list;
 enumerator_list: LeftCurly enumeration_item (Comma enumeration_item)+ Comma? RightCurly;
 enumeration_item
 	: enumerator
@@ -460,12 +466,15 @@ pipeline_operator
 	| LeftThreadingPipeline
 	;
 
+array_index_operator
+	: LeftSquare expression (Comma expression)* Comma? RightSquare;
+
 expression
 	: LeftParenthese expression RightParenthese											#parentheses_expression_
 	| literal_expression																#literal_expression_
 	| expression Comma expression														#comma_expression_
-	| expression Dot Identifier															#field_expression_
-	| Dot Identifier																	#anonymous_field_expression_
+	| expression Dot path_expression_element											#field_expression_
+	| Dot path_expression_element														#anonymous_field_expression_
 	| expression function_call_operator													#member_function_call_expression_
 	| expression unary_optional_unwrapping_operator										#unary_optional_unwrapping_expression_
 	| expression binary_optional_unwrapping_operator expression							#binary_optional_unwrapping_expression_
@@ -473,6 +482,7 @@ expression
 	| expression arithmetic_operator expression 										#arithmetic_expression_
 	| negation_operator expression														#negation_expression_
 	| path_expression																	#path_expression_
+	| expression array_index_operator													#array_index_expression_
 	| expression assignment_operator expression											#assignment_expression_
 	| expression comparison_operator expression											#comparison_expression_
 	| try_operator expression															#try_expression_
@@ -489,7 +499,9 @@ expression
 	| expression type_casting_operator type_expression									#type_cast_expression_
 	| closure_expression																#closure_expression_
 	| expression Dot KeywordInit														#init_expression_
+	| Dot KeywordInit																	#anonymous_init_expression_
 	| expression Dot KeywordDeinit														#deinit_expression_
+	| Dot KeywordDeinit																	#anonymous_deinit_expression_
 	| expression Dot KeywordSelf														#self_expression_
 	| code_block_expression																#code_block_expression_
 	| type_expression																	#type_expression_
@@ -524,23 +536,28 @@ require_clause: KeywordRequire expression;
 
 then_expression_or_block: (KeywordThen expression) | (code_block);
 expression_or_block: expression | code_block;
+then_type_expression_or_block: (KeywordThen type_expression) | (code_block);
+type_expression_or_block: type_expression | code_block;
 
 if_expression:
 	KeywordIf expression then_expression_or_block  
-	  (KeywordElse expression_or_block)?;
+	(KeywordElse expression_or_block)?;
 
 while_expression:
 	KeywordWhile expression then_expression_or_block  
-      (KeywordElse expression_or_block)?;
+	(KeywordWith then_expression_or_block)?
+    (KeywordElse expression_or_block)?;
 
 repeat_while_expression:
 	KeywordRepeat expression then_expression_or_block  
-	  (KeywordElse expression_or_block)?;
+	(KeywordWith then_expression_or_block)?
+	(KeywordElse expression_or_block)?;
 
 for_expression:
 	KeywordFor Identifier KeywordIn attributes? expression require_clause?
-	  then_expression_or_block 
-	  (KeywordElse expression_or_block)?;
+	then_expression_or_block 
+	(KeywordWith then_expression_or_block)?
+	(KeywordElse expression_or_block)?;
 
 match_case: match_case_label Colon (expression | code_block);
 match_case_label: attributes? match_item_list;
@@ -549,20 +566,24 @@ match_item_list: pattern require_clause? (Comma pattern require_clause?)*;
 type_expression
 	: Identifier
 	| RightParenthese type_expression LeftParenthese
+	| path_expression function_call_operator
 	| path_expression
+	| type_expression array_index_operator
 	| basic_type
 	| tuple_type
 	| optional_type
 	| collection_type
 	| any_type
 	| some_type
+	| const_type
 	| type_expression PointerType
-	| KeywordIf expression ((KeywordThen type_expression) | (code_block)) (KeywordElse (KeywordThen type_expression | code_block))?
-	| KeywordWhile expression KeywordThen type_expression (KeywordElse (type_expression | code_block))?
-	| KeywordRepeat ((KeywordThen type_expression) | (code_block)) KeywordWhile expression (KeywordElse (type_expression | code_block))?
-	| KeywordFor Identifier KeywordIn attributes? KeywordIn expression ((KeywordThen type_expression) | (code_block)) (KeywordElse (type_expression | code_block))?
+	| if_expression
+	| while_expression
+	| repeat_while_expression
+	| for_expression
 	| code_block_expression
 	| KeywordUnreachable
+	| KeywordFallthrough
 	| KeywordThrow expression
 	| KeywordReturn type_expression?
 	| KeywordBreak code_block_name? (KeywordWith type_expression)?
@@ -607,7 +628,7 @@ any_type: KeywordAny type_expression;
 some_type: KeywordSome type_expression;
 
 static_array_type:
-    LeftSquare (expression | Underscore) (Comma	expression | Underscore)+ Comma? RightSquare (type_expression | Underscore);
+    LeftSquare (expression | Underscore) (Comma	expression | Underscore)* Comma? RightSquare (type_expression | Underscore);
 
 dynamic_array_type:
     LeftSquare RightSquare (type_expression | Underscore);
@@ -616,7 +637,10 @@ map_type:
 	LeftSquare (type_expression | Underscore) Colon (type_expression | Underscore) RightSquare;
 
 set_type:
-	LeftSquare (type_expression | Underscore) RightSquare;
+	LeftSquare Colon (type_expression | Underscore) RightSquare;
+
+const_type
+	: KeywordConst type_expression;
 
 simple_type:
 	integer_type | floating_point_type | boolean_type | byte_type | unit_type | character_type | string_type | comptime_type;

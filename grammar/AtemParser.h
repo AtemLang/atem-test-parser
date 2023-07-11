@@ -82,95 +82,98 @@ public:
     RuleDeclaration_statement_list = 4, RuleDeclaration_statement = 5, RuleDeclarator = 6, 
     RuleDeclare_operator = 7, RuleEmpty_declare_operator = 8, RuleDeclarator_name = 9, 
     RuleDeclaration_expression = 10, RuleTest_declaration = 11, RuleTest_name = 12, 
-    RuleStruct_declaration = 13, RuleClass_declaration = 14, RuleFinal_specifier = 15, 
-    RuleMember_specifier = 16, RuleMember_specifiers = 17, RuleExtension_list = 18, 
-    RuleExtension_item = 19, RuleInherit_clause = 20, RuleInherit_list = 21, 
-    RuleInherit_item = 22, RuleInherit_items = 23, RuleInherit_member_list = 24, 
-    RuleInherit_member = 25, RuleInherit_members = 26, RuleInherit_type_override = 27, 
-    RuleInherit_variable_override = 28, RuleInherit_constant_override = 29, 
-    RuleInherit_function_override = 30, RuleInherit_initializer_override = 31, 
-    RuleInherit_deinitializer_override = 32, RuleInherit_declarator = 33, 
-    RuleEmpty_inherit_declarator = 34, RuleInherit_name = 35, RuleImpl_clause = 36, 
-    RuleImpl_list = 37, RuleImpl_item = 38, RuleImpl_items = 39, RuleImpl_with_clause = 40, 
-    RuleImpl_member_list = 41, RuleImpl_member = 42, RuleImpl_members = 43, 
-    RuleAssociated_type_impl = 44, RuleAssociated_variable_impl = 45, RuleAssociated_constant_impl = 46, 
-    RuleAssociated_function_impl = 47, RuleAssociated_initializer_impl = 48, 
-    RuleAssociated_deinitializer_impl = 49, RuleAssociated_declarator = 50, 
-    RuleEmpty_associated_declarator = 51, RuleAssociated_name = 52, RuleInitializer_list = 53, 
-    RuleInitializer_member_list = 54, RuleInitializer_member = 55, RuleInitializer_type = 56, 
-    RuleInitializer_members = 57, RuleDeinitializer_list = 58, RuleDeinitializer_member_list = 59, 
-    RuleDeinitializer_member = 60, RuleDeinitializer_type = 61, RuleDeinitializer_members = 62, 
-    RuleMember_list = 63, RuleMember = 64, RuleMembers = 65, RuleMember_nested_type = 66, 
-    RuleNested_class = 67, RuleNested_struct = 68, RuleNested_protocol = 69, 
-    RuleNested_union = 70, RuleNested_enum = 71, RuleMember_type = 72, RuleMember_variable = 73, 
-    RuleMember_constant = 74, RuleMember_function = 75, RuleMember_declarator = 76, 
-    RuleMember_name = 77, RuleGetter_and_setter_list = 78, RuleGetter_list = 79, 
-    RuleGetter_and_setter_item = 80, RuleGetter_and_setter_items = 81, RuleGetter_declaration = 82, 
-    RuleGetter_type = 83, RuleSetter_declaration = 84, RuleSetter_type = 85, 
-    RuleSetter_parameter_clause = 86, RuleSetter_parameter = 87, RuleSetter_parameter_name = 88, 
-    RuleProtocol_declaration = 89, RuleProtocol_extend_list = 90, RuleProtocol_requirement_list = 91, 
-    RuleProtocol_requirement_item = 92, RuleProtocol_requirement_items = 93, 
-    RuleProtocol_requirement_type = 94, RuleProtocol_requirement_function = 95, 
-    RuleProtocol_requirement_variable = 96, RuleProtocol_requirement_constant = 97, 
-    RuleProtocol_requirement_initializer = 98, RuleProtocol_requirement_deinitializer = 99, 
-    RuleRequirement_declarator = 100, RuleEmpty_requirement_declarator = 101, 
-    RuleRequirement_name = 102, RuleRequirement_default_clause = 103, RuleRequirement_getter_and_setter = 104, 
-    RuleRequirement_getter = 105, RuleRequirement_getter_and_setter_item = 106, 
-    RuleInitializer_declaration = 107, RuleDeinitializer_declaration = 108, 
-    RuleUnion_declaration = 109, RuleEnum_declaration = 110, RuleEnumerator_list = 111, 
-    RuleEnumeration_item = 112, RuleEnumerator = 113, RuleEnumerator_associated_value_clause = 114, 
-    RuleEnumerator_associated_value_list = 115, RuleEnumerator_associated_value = 116, 
-    RuleEnumerator_associated_value_name = 117, RuleEnumerator_representation = 118, 
-    RuleEnumerator_name = 119, RuleImport_alias_declaration = 120, RuleImport_expression = 121, 
-    RuleImport_statement = 122, RuleImport_path_expression_list = 123, RuleImport_path_expression = 124, 
-    RuleImport_path_expression_element = 125, RuleImport_element_list = 126, 
-    RuleImport_kind = 127, RuleProject_declaration = 128, RuleProject_member_list = 129, 
-    RuleProject_member = 130, RuleProject_members = 131, RulePackage_declaration = 132, 
-    RulePackage_member_list = 133, RulePackage_member = 134, RulePackage_members = 135, 
-    RuleModule_declaration = 136, RuleNamespace_declaration = 137, RuleTypealias_declaration = 138, 
-    RuleAccess_level_specifier = 139, RuleFunction_declaration = 140, RuleFunction_body = 141, 
-    RuleContract_list = 142, RuleContract = 143, RuleContract_precondition = 144, 
-    RuleContract_postcondition = 145, RuleReturn_value_name = 146, RuleFunction_name = 147, 
-    RuleFunction_type = 148, RuleFunction_specifier = 149, RuleFunction_specifiers = 150, 
-    RuleFunction_result = 151, RuleFunction_parameter_clause = 152, RuleFunction_parameter_list = 153, 
-    RuleFunction_parameter = 154, RuleFunction_parameter_label = 155, RuleFunction_parameter_name = 156, 
-    RuleDefault_argument_clause = 157, RuleType_annotation = 158, RuleVariable_declaration = 159, 
-    RuleConstant_declaration = 160, RuleStorage_level_specifier = 161, RuleClosure_expression = 162, 
-    RuleCapture_list = 163, RuleCapture_list_items = 164, RuleCapture_list_item = 165, 
-    RuleDefer_statement = 166, RuleDefer_kind = 167, RuleCode_block_no_label = 168, 
-    RuleCode_block = 169, RuleCode_block_name = 170, RuleAttribute = 171, 
-    RuleAttributes = 172, RuleAttribute_name = 173, RuleFunction_call_operator = 174, 
-    RuleFunction_call_argument_clause = 175, RuleFunction_call_argument_list = 176, 
-    RuleFunction_call_argument = 177, RuleArgument_name = 178, RuleArgument_names = 179, 
-    RuleTrailing_closures = 180, RuleLabeled_trailing_closure = 181, RuleLabeled_trailing_closures = 182, 
-    RuleArithmetic_operator = 183, RuleNegation_operator = 184, RuleAssignment_operator = 185, 
-    RuleComparison_operator = 186, RuleBinary_boolean_operator = 187, RuleUnary_boolean_operator = 188, 
-    RuleBinary_bit_operator = 189, RuleUnary_bit_operator = 190, RulePointer_operator = 191, 
-    RuleReflect_operator = 192, RuleRange_operator = 193, RuleBinary_optional_unwrapping_operator = 194, 
-    RuleUnary_optional_unwrapping_operator = 195, RuleArrow_operator = 196, 
-    RuleTry_operator = 197, RuleType_casting_operator = 198, RuleAwait_operator = 199, 
-    RuleAsync_operator = 200, RulePipeline_operator = 201, RuleExpression = 202, 
-    RuleCode_block_expression = 203, RuleRequire_clause = 204, RuleThen_expression_or_block = 205, 
-    RuleExpression_or_block = 206, RuleIf_expression = 207, RuleWhile_expression = 208, 
-    RuleRepeat_while_expression = 209, RuleFor_expression = 210, RuleMatch_case = 211, 
-    RuleMatch_case_label = 212, RuleMatch_item_list = 213, RuleType_expression = 214, 
-    RuleBasic_type = 215, RuleCollection_type = 216, RuleNever_type = 217, 
-    RuleTuple_type = 218, RuleTuple_type_element = 219, RuleOptional_type = 220, 
-    RuleAny_type = 221, RuleSome_type = 222, RuleStatic_array_type = 223, 
-    RuleDynamic_array_type = 224, RuleMap_type = 225, RuleSet_type = 226, 
-    RuleSimple_type = 227, RuleInteger_type = 228, RuleFloating_point_type = 229, 
-    RuleBoolean_type = 230, RuleByte_type = 231, RuleUnit_type = 232, RuleCharacter_type = 233, 
-    RuleString_type = 234, RuleComptime_type = 235, RuleType_type = 236, 
-    RuleTuple_expression = 237, RuleTuple_element_list = 238, RuleTuple_element = 239, 
-    RulePath_expression = 240, RulePath_expression_element = 241, RuleLiteral_expression = 242, 
-    RuleLiteral = 243, RuleNumeric_literal = 244, RuleInteger_literal = 245, 
-    RuleFloating_point_literal = 246, RuleBoolean_literal = 247, RuleNull_literal = 248, 
-    RuleUndefined_literal = 249, RuleDefault_literal = 250, RuleArray_literal = 251, 
-    RuleString_literal = 252, RuleExtended_string_literal = 253, RuleStatic_string_literal = 254, 
-    RuleInterpolated_string_literal = 255, RulePattern = 256, RuleTuple_pattern_element_list = 257, 
-    RuleTuple_pattern_element = 258, RuleWildcard_pattern = 259, RuleIdentifier_pattern = 260, 
-    RuleValue_binding_pattern = 261, RuleTuple_pattern = 262, RuleEnumerator_pattern = 263, 
-    RuleOptional_pattern = 264, RuleExpression_pattern = 265
+    RuleStruct_declaration = 13, RuleClass_declaration = 14, RuleExtension_declaration = 15, 
+    RuleUdt_parameter_clause = 16, RuleFinal_specifier = 17, RuleMember_specifier = 18, 
+    RuleMember_specifiers = 19, RuleExtension_list = 20, RuleExtension_item = 21, 
+    RuleInherit_clause = 22, RuleInherit_list = 23, RuleInherit_item = 24, 
+    RuleInherit_items = 25, RuleInherit_member_list = 26, RuleInherit_member = 27, 
+    RuleInherit_members = 28, RuleInherit_type_override = 29, RuleInherit_variable_override = 30, 
+    RuleInherit_constant_override = 31, RuleInherit_function_override = 32, 
+    RuleInherit_initializer_override = 33, RuleInherit_deinitializer_override = 34, 
+    RuleInherit_declarator = 35, RuleEmpty_inherit_declarator = 36, RuleInherit_name = 37, 
+    RuleImpl_clause = 38, RuleImpl_list = 39, RuleImpl_item = 40, RuleImpl_items = 41, 
+    RuleImpl_with_clause = 42, RuleImpl_member_list = 43, RuleImpl_member = 44, 
+    RuleImpl_members = 45, RuleAssociated_type_impl = 46, RuleAssociated_variable_impl = 47, 
+    RuleAssociated_constant_impl = 48, RuleAssociated_function_impl = 49, 
+    RuleAssociated_initializer_impl = 50, RuleAssociated_deinitializer_impl = 51, 
+    RuleAssociated_declarator = 52, RuleEmpty_associated_declarator = 53, 
+    RuleAssociated_name = 54, RuleInitializer_list = 55, RuleInitializer_member_list = 56, 
+    RuleInitializer_member = 57, RuleInitializer_type = 58, RuleInitializer_members = 59, 
+    RuleDeinitializer_list = 60, RuleDeinitializer_member_list = 61, RuleDeinitializer_member = 62, 
+    RuleDeinitializer_type = 63, RuleDeinitializer_members = 64, RuleMember_list = 65, 
+    RuleMember = 66, RuleMembers = 67, RuleMember_nested_type = 68, RuleNested_class = 69, 
+    RuleNested_struct = 70, RuleNested_protocol = 71, RuleNested_union = 72, 
+    RuleNested_enum = 73, RuleMember_type = 74, RuleMember_variable = 75, 
+    RuleMember_constant = 76, RuleMember_function = 77, RuleMember_declarator = 78, 
+    RuleMember_name = 79, RuleGetter_and_setter_list = 80, RuleGetter_list = 81, 
+    RuleGetter_and_setter_item = 82, RuleGetter_and_setter_items = 83, RuleGetter_declaration = 84, 
+    RuleGetter_type = 85, RuleSetter_declaration = 86, RuleSetter_type = 87, 
+    RuleSetter_parameter_clause = 88, RuleSetter_parameter = 89, RuleSetter_parameter_name = 90, 
+    RuleProtocol_declaration = 91, RuleProtocol_extend_list = 92, RuleProtocol_requirement_list = 93, 
+    RuleProtocol_requirement_item = 94, RuleProtocol_requirement_items = 95, 
+    RuleProtocol_requirement_type = 96, RuleProtocol_requirement_function = 97, 
+    RuleProtocol_requirement_variable = 98, RuleProtocol_requirement_constant = 99, 
+    RuleProtocol_requirement_initializer = 100, RuleProtocol_requirement_deinitializer = 101, 
+    RuleRequirement_declarator = 102, RuleEmpty_requirement_declarator = 103, 
+    RuleRequirement_name = 104, RuleRequirement_default_clause = 105, RuleRequirement_getter_and_setter = 106, 
+    RuleRequirement_getter = 107, RuleRequirement_getter_and_setter_item = 108, 
+    RuleInitializer_declaration = 109, RuleDeinitializer_declaration = 110, 
+    RuleUnion_declaration = 111, RuleEnum_declaration = 112, RuleEnumerator_list = 113, 
+    RuleEnumeration_item = 114, RuleEnumerator = 115, RuleEnumerator_associated_value_clause = 116, 
+    RuleEnumerator_associated_value_list = 117, RuleEnumerator_associated_value = 118, 
+    RuleEnumerator_associated_value_name = 119, RuleEnumerator_representation = 120, 
+    RuleEnumerator_name = 121, RuleImport_alias_declaration = 122, RuleImport_expression = 123, 
+    RuleImport_statement = 124, RuleImport_path_expression_list = 125, RuleImport_path_expression = 126, 
+    RuleImport_path_expression_element = 127, RuleImport_element_list = 128, 
+    RuleImport_kind = 129, RuleProject_declaration = 130, RuleProject_member_list = 131, 
+    RuleProject_member = 132, RuleProject_members = 133, RulePackage_declaration = 134, 
+    RulePackage_member_list = 135, RulePackage_member = 136, RulePackage_members = 137, 
+    RuleModule_declaration = 138, RuleNamespace_declaration = 139, RuleTypealias_declaration = 140, 
+    RuleAccess_level_specifier = 141, RuleFunction_declaration = 142, RuleFunction_body = 143, 
+    RuleContract_list = 144, RuleContract = 145, RuleContract_precondition = 146, 
+    RuleContract_postcondition = 147, RuleReturn_value_name = 148, RuleFunction_name = 149, 
+    RuleFunction_type = 150, RuleFunction_specifier = 151, RuleFunction_specifiers = 152, 
+    RuleFunction_result = 153, RuleFunction_parameter_clause = 154, RuleFunction_parameter_list = 155, 
+    RuleFunction_parameter = 156, RuleFunction_parameter_label = 157, RuleFunction_parameter_name = 158, 
+    RuleDefault_argument_clause = 159, RuleType_annotation = 160, RuleVariable_declaration = 161, 
+    RuleConstant_declaration = 162, RuleStorage_level_specifier = 163, RuleClosure_expression = 164, 
+    RuleCapture_list = 165, RuleCapture_list_items = 166, RuleCapture_list_item = 167, 
+    RuleDefer_statement = 168, RuleDefer_kind = 169, RuleCode_block_no_label = 170, 
+    RuleCode_block = 171, RuleCode_block_name = 172, RuleAttribute = 173, 
+    RuleAttributes = 174, RuleAttribute_name = 175, RuleFunction_call_operator = 176, 
+    RuleFunction_call_argument_clause = 177, RuleFunction_call_argument_list = 178, 
+    RuleFunction_call_argument = 179, RuleArgument_name = 180, RuleArgument_names = 181, 
+    RuleTrailing_closures = 182, RuleLabeled_trailing_closure = 183, RuleLabeled_trailing_closures = 184, 
+    RuleArithmetic_operator = 185, RuleNegation_operator = 186, RuleAssignment_operator = 187, 
+    RuleComparison_operator = 188, RuleBinary_boolean_operator = 189, RuleUnary_boolean_operator = 190, 
+    RuleBinary_bit_operator = 191, RuleUnary_bit_operator = 192, RulePointer_operator = 193, 
+    RuleReflect_operator = 194, RuleRange_operator = 195, RuleBinary_optional_unwrapping_operator = 196, 
+    RuleUnary_optional_unwrapping_operator = 197, RuleArrow_operator = 198, 
+    RuleTry_operator = 199, RuleType_casting_operator = 200, RuleAwait_operator = 201, 
+    RuleAsync_operator = 202, RulePipeline_operator = 203, RuleArray_index_operator = 204, 
+    RuleExpression = 205, RuleCode_block_expression = 206, RuleRequire_clause = 207, 
+    RuleThen_expression_or_block = 208, RuleExpression_or_block = 209, RuleThen_type_expression_or_block = 210, 
+    RuleType_expression_or_block = 211, RuleIf_expression = 212, RuleWhile_expression = 213, 
+    RuleRepeat_while_expression = 214, RuleFor_expression = 215, RuleMatch_case = 216, 
+    RuleMatch_case_label = 217, RuleMatch_item_list = 218, RuleType_expression = 219, 
+    RuleBasic_type = 220, RuleCollection_type = 221, RuleNever_type = 222, 
+    RuleTuple_type = 223, RuleTuple_type_element = 224, RuleOptional_type = 225, 
+    RuleAny_type = 226, RuleSome_type = 227, RuleStatic_array_type = 228, 
+    RuleDynamic_array_type = 229, RuleMap_type = 230, RuleSet_type = 231, 
+    RuleConst_type = 232, RuleSimple_type = 233, RuleInteger_type = 234, 
+    RuleFloating_point_type = 235, RuleBoolean_type = 236, RuleByte_type = 237, 
+    RuleUnit_type = 238, RuleCharacter_type = 239, RuleString_type = 240, 
+    RuleComptime_type = 241, RuleType_type = 242, RuleTuple_expression = 243, 
+    RuleTuple_element_list = 244, RuleTuple_element = 245, RulePath_expression = 246, 
+    RulePath_expression_element = 247, RuleLiteral_expression = 248, RuleLiteral = 249, 
+    RuleNumeric_literal = 250, RuleInteger_literal = 251, RuleFloating_point_literal = 252, 
+    RuleBoolean_literal = 253, RuleNull_literal = 254, RuleUndefined_literal = 255, 
+    RuleDefault_literal = 256, RuleArray_literal = 257, RuleString_literal = 258, 
+    RuleExtended_string_literal = 259, RuleStatic_string_literal = 260, 
+    RuleInterpolated_string_literal = 261, RulePattern = 262, RuleTuple_pattern_element_list = 263, 
+    RuleTuple_pattern_element = 264, RuleWildcard_pattern = 265, RuleIdentifier_pattern = 266, 
+    RuleValue_binding_pattern = 267, RuleTuple_pattern = 268, RuleEnumerator_pattern = 269, 
+    RuleOptional_pattern = 270, RuleExpression_pattern = 271
   };
 
   explicit AtemParser(antlr4::TokenStream *input);
@@ -205,6 +208,8 @@ public:
   class Test_nameContext;
   class Struct_declarationContext;
   class Class_declarationContext;
+  class Extension_declarationContext;
+  class Udt_parameter_clauseContext;
   class Final_specifierContext;
   class Member_specifierContext;
   class Member_specifiersContext;
@@ -392,11 +397,14 @@ public:
   class Await_operatorContext;
   class Async_operatorContext;
   class Pipeline_operatorContext;
+  class Array_index_operatorContext;
   class ExpressionContext;
   class Code_block_expressionContext;
   class Require_clauseContext;
   class Then_expression_or_blockContext;
   class Expression_or_blockContext;
+  class Then_type_expression_or_blockContext;
+  class Type_expression_or_blockContext;
   class If_expressionContext;
   class While_expressionContext;
   class Repeat_while_expressionContext;
@@ -417,6 +425,7 @@ public:
   class Dynamic_array_typeContext;
   class Map_typeContext;
   class Set_typeContext;
+  class Const_typeContext;
   class Simple_typeContext;
   class Integer_typeContext;
   class Floating_point_typeContext;
@@ -625,6 +634,7 @@ public:
     Protocol_declarationContext *protocol_declaration();
     Union_declarationContext *union_declaration();
     Enum_declarationContext *enum_declaration();
+    Extension_declarationContext *extension_declaration();
     Test_declarationContext *test_declaration();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -669,6 +679,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordStruct();
     Member_listContext *member_list();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
     Final_specifierContext *final_specifier();
     Extension_listContext *extension_list();
@@ -688,6 +699,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordClass();
     Member_listContext *member_list();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
     Final_specifierContext *final_specifier();
     Extension_listContext *extension_list();
@@ -700,6 +712,41 @@ public:
   };
 
   Class_declarationContext* class_declaration();
+
+  class  Extension_declarationContext : public antlr4::ParserRuleContext {
+  public:
+    Extension_declarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *KeywordExtend();
+    Path_expressionContext *path_expression();
+    antlr4::tree::TerminalNode *KeywordWith();
+    Member_listContext *member_list();
+    AttributesContext *attributes();
+    Extension_listContext *extension_list();
+    Initializer_listContext *initializer_list();
+    Deinitializer_listContext *deinitializer_list();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Extension_declarationContext* extension_declaration();
+
+  class  Udt_parameter_clauseContext : public antlr4::ParserRuleContext {
+  public:
+    Udt_parameter_clauseContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *LeftParenthese();
+    antlr4::tree::TerminalNode *RightParenthese();
+    Function_parameter_listContext *function_parameter_list();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Udt_parameter_clauseContext* udt_parameter_clause();
 
   class  Final_specifierContext : public antlr4::ParserRuleContext {
   public:
@@ -1812,6 +1859,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordProtocol();
     Protocol_requirement_listContext *protocol_requirement_list();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
     Final_specifierContext *final_specifier();
     Protocol_extend_listContext *protocol_extend_list();
@@ -2151,6 +2199,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordEnum();
     Enumerator_listContext *enumerator_list();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
     Final_specifierContext *final_specifier();
     Extension_listContext *extension_list();
@@ -3555,6 +3604,24 @@ public:
 
   Pipeline_operatorContext* pipeline_operator();
 
+  class  Array_index_operatorContext : public antlr4::ParserRuleContext {
+  public:
+    Array_index_operatorContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *LeftSquare();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    antlr4::tree::TerminalNode *RightSquare();
+    std::vector<antlr4::tree::TerminalNode *> Comma();
+    antlr4::tree::TerminalNode* Comma(size_t i);
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Array_index_operatorContext* array_index_operator();
+
   class  ExpressionContext : public antlr4::ParserRuleContext {
   public:
     ExpressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -3724,6 +3791,16 @@ public:
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
 
+  class  Array_index_expression_Context : public ExpressionContext {
+  public:
+    Array_index_expression_Context(ExpressionContext *ctx);
+
+    ExpressionContext *expression();
+    Array_index_operatorContext *array_index_operator();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
   class  Derefence_expression_Context : public ExpressionContext {
   public:
     Derefence_expression_Context(ExpressionContext *ctx);
@@ -3777,6 +3854,16 @@ public:
     Expression_or_blockContext *expression_or_block();
     antlr4::tree::TerminalNode *LeftCurly();
     antlr4::tree::TerminalNode *RightCurly();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
+  class  Anonymous_deinit_expression_Context : public ExpressionContext {
+  public:
+    Anonymous_deinit_expression_Context(ExpressionContext *ctx);
+
+    antlr4::tree::TerminalNode *Dot();
+    antlr4::tree::TerminalNode *KeywordDeinit();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
@@ -3840,7 +3927,7 @@ public:
 
     ExpressionContext *expression();
     antlr4::tree::TerminalNode *Dot();
-    antlr4::tree::TerminalNode *Identifier();
+    Path_expression_elementContext *path_expression_element();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
@@ -4048,7 +4135,17 @@ public:
     Anonymous_field_expression_Context(ExpressionContext *ctx);
 
     antlr4::tree::TerminalNode *Dot();
-    antlr4::tree::TerminalNode *Identifier();
+    Path_expression_elementContext *path_expression_element();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
+  class  Anonymous_init_expression_Context : public ExpressionContext {
+  public:
+    Anonymous_init_expression_Context(ExpressionContext *ctx);
+
+    antlr4::tree::TerminalNode *Dot();
+    antlr4::tree::TerminalNode *KeywordInit();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
@@ -4163,6 +4260,35 @@ public:
 
   Expression_or_blockContext* expression_or_block();
 
+  class  Then_type_expression_or_blockContext : public antlr4::ParserRuleContext {
+  public:
+    Then_type_expression_or_blockContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *KeywordThen();
+    Type_expressionContext *type_expression();
+    Code_blockContext *code_block();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Then_type_expression_or_blockContext* then_type_expression_or_block();
+
+  class  Type_expression_or_blockContext : public antlr4::ParserRuleContext {
+  public:
+    Type_expression_or_blockContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Type_expressionContext *type_expression();
+    Code_blockContext *code_block();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Type_expression_or_blockContext* type_expression_or_block();
+
   class  If_expressionContext : public antlr4::ParserRuleContext {
   public:
     If_expressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -4186,7 +4312,9 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordWhile();
     ExpressionContext *expression();
-    Then_expression_or_blockContext *then_expression_or_block();
+    std::vector<Then_expression_or_blockContext *> then_expression_or_block();
+    Then_expression_or_blockContext* then_expression_or_block(size_t i);
+    antlr4::tree::TerminalNode *KeywordWith();
     antlr4::tree::TerminalNode *KeywordElse();
     Expression_or_blockContext *expression_or_block();
 
@@ -4203,7 +4331,9 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordRepeat();
     ExpressionContext *expression();
-    Then_expression_or_blockContext *then_expression_or_block();
+    std::vector<Then_expression_or_blockContext *> then_expression_or_block();
+    Then_expression_or_blockContext* then_expression_or_block(size_t i);
+    antlr4::tree::TerminalNode *KeywordWith();
     antlr4::tree::TerminalNode *KeywordElse();
     Expression_or_blockContext *expression_or_block();
 
@@ -4222,9 +4352,11 @@ public:
     antlr4::tree::TerminalNode *Identifier();
     antlr4::tree::TerminalNode *KeywordIn();
     ExpressionContext *expression();
-    Then_expression_or_blockContext *then_expression_or_block();
+    std::vector<Then_expression_or_blockContext *> then_expression_or_block();
+    Then_expression_or_blockContext* then_expression_or_block(size_t i);
     AttributesContext *attributes();
     Require_clauseContext *require_clause();
+    antlr4::tree::TerminalNode *KeywordWith();
     antlr4::tree::TerminalNode *KeywordElse();
     Expression_or_blockContext *expression_or_block();
 
@@ -4289,38 +4421,33 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *Identifier();
     antlr4::tree::TerminalNode *RightParenthese();
-    std::vector<Type_expressionContext *> type_expression();
-    Type_expressionContext* type_expression(size_t i);
+    Type_expressionContext *type_expression();
     antlr4::tree::TerminalNode *LeftParenthese();
     Path_expressionContext *path_expression();
+    Function_call_operatorContext *function_call_operator();
     Basic_typeContext *basic_type();
     Tuple_typeContext *tuple_type();
     Optional_typeContext *optional_type();
     Collection_typeContext *collection_type();
     Any_typeContext *any_type();
     Some_typeContext *some_type();
-    antlr4::tree::TerminalNode *KeywordIf();
-    ExpressionContext *expression();
-    antlr4::tree::TerminalNode *KeywordElse();
-    std::vector<antlr4::tree::TerminalNode *> KeywordThen();
-    antlr4::tree::TerminalNode* KeywordThen(size_t i);
-    std::vector<Code_blockContext *> code_block();
-    Code_blockContext* code_block(size_t i);
-    antlr4::tree::TerminalNode *KeywordWhile();
-    antlr4::tree::TerminalNode *KeywordRepeat();
-    antlr4::tree::TerminalNode *KeywordFor();
-    std::vector<antlr4::tree::TerminalNode *> KeywordIn();
-    antlr4::tree::TerminalNode* KeywordIn(size_t i);
-    AttributesContext *attributes();
+    Const_typeContext *const_type();
+    If_expressionContext *if_expression();
+    While_expressionContext *while_expression();
+    Repeat_while_expressionContext *repeat_while_expression();
+    For_expressionContext *for_expression();
     Code_block_expressionContext *code_block_expression();
     antlr4::tree::TerminalNode *KeywordUnreachable();
+    antlr4::tree::TerminalNode *KeywordFallthrough();
     antlr4::tree::TerminalNode *KeywordThrow();
+    ExpressionContext *expression();
     antlr4::tree::TerminalNode *KeywordReturn();
     antlr4::tree::TerminalNode *KeywordBreak();
     Code_block_nameContext *code_block_name();
     antlr4::tree::TerminalNode *KeywordWith();
     antlr4::tree::TerminalNode *KeywordContinue();
     antlr4::tree::TerminalNode *KeywordComptime();
+    Array_index_operatorContext *array_index_operator();
     antlr4::tree::TerminalNode *PointerType();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -4518,6 +4645,7 @@ public:
     Set_typeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *LeftSquare();
+    antlr4::tree::TerminalNode *Colon();
     antlr4::tree::TerminalNode *RightSquare();
     Type_expressionContext *type_expression();
     antlr4::tree::TerminalNode *Underscore();
@@ -4528,6 +4656,20 @@ public:
   };
 
   Set_typeContext* set_type();
+
+  class  Const_typeContext : public antlr4::ParserRuleContext {
+  public:
+    Const_typeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *KeywordConst();
+    Type_expressionContext *type_expression();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Const_typeContext* const_type();
 
   class  Simple_typeContext : public antlr4::ParserRuleContext {
   public:
