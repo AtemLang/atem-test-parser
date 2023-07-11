@@ -631,6 +631,15 @@ public:
   virtual void enterArray_index_operator(AtemParser::Array_index_operatorContext * /*ctx*/) override { }
   virtual void exitArray_index_operator(AtemParser::Array_index_operatorContext * /*ctx*/) override { }
 
+  virtual void enterTuple_index_operator(AtemParser::Tuple_index_operatorContext * /*ctx*/) override { }
+  virtual void exitTuple_index_operator(AtemParser::Tuple_index_operatorContext * /*ctx*/) override { }
+
+  virtual void enterBuiltin_function_operator(AtemParser::Builtin_function_operatorContext * /*ctx*/) override { }
+  virtual void exitBuiltin_function_operator(AtemParser::Builtin_function_operatorContext * /*ctx*/) override { }
+
+  virtual void enterBuiltin_function_name(AtemParser::Builtin_function_nameContext * /*ctx*/) override { }
+  virtual void exitBuiltin_function_name(AtemParser::Builtin_function_nameContext * /*ctx*/) override { }
+
   virtual void enterUsing_expression_(AtemParser::Using_expression_Context * /*ctx*/) override { }
   virtual void exitUsing_expression_(AtemParser::Using_expression_Context * /*ctx*/) override { }
 
@@ -639,6 +648,9 @@ public:
 
   virtual void enterContinue_expression_(AtemParser::Continue_expression_Context * /*ctx*/) override { }
   virtual void exitContinue_expression_(AtemParser::Continue_expression_Context * /*ctx*/) override { }
+
+  virtual void enterWildcard_expression_(AtemParser::Wildcard_expression_Context * /*ctx*/) override { }
+  virtual void exitWildcard_expression_(AtemParser::Wildcard_expression_Context * /*ctx*/) override { }
 
   virtual void enterCatch_expression_(AtemParser::Catch_expression_Context * /*ctx*/) override { }
   virtual void exitCatch_expression_(AtemParser::Catch_expression_Context * /*ctx*/) override { }
@@ -675,6 +687,9 @@ public:
 
   virtual void enterUnreachable_expression_(AtemParser::Unreachable_expression_Context * /*ctx*/) override { }
   virtual void exitUnreachable_expression_(AtemParser::Unreachable_expression_Context * /*ctx*/) override { }
+
+  virtual void enterTuple_index_expression_(AtemParser::Tuple_index_expression_Context * /*ctx*/) override { }
+  virtual void exitTuple_index_expression_(AtemParser::Tuple_index_expression_Context * /*ctx*/) override { }
 
   virtual void enterArray_index_expression_(AtemParser::Array_index_expression_Context * /*ctx*/) override { }
   virtual void exitArray_index_expression_(AtemParser::Array_index_expression_Context * /*ctx*/) override { }
@@ -783,6 +798,9 @@ public:
 
   virtual void enterAssert_expression_(AtemParser::Assert_expression_Context * /*ctx*/) override { }
   virtual void exitAssert_expression_(AtemParser::Assert_expression_Context * /*ctx*/) override { }
+
+  virtual void enterBuiltin_function_call(AtemParser::Builtin_function_callContext * /*ctx*/) override { }
+  virtual void exitBuiltin_function_call(AtemParser::Builtin_function_callContext * /*ctx*/) override { }
 
   virtual void enterClosure_expression_(AtemParser::Closure_expression_Context * /*ctx*/) override { }
   virtual void exitClosure_expression_(AtemParser::Closure_expression_Context * /*ctx*/) override { }
@@ -960,6 +978,9 @@ public:
 
   virtual void enterInterpolated_string_literal(AtemParser::Interpolated_string_literalContext * /*ctx*/) override { }
   virtual void exitInterpolated_string_literal(AtemParser::Interpolated_string_literalContext * /*ctx*/) override { }
+
+  virtual void enterChar_literal(AtemParser::Char_literalContext * /*ctx*/) override { }
+  virtual void exitChar_literal(AtemParser::Char_literalContext * /*ctx*/) override { }
 
   virtual void enterOptional_pattern_(AtemParser::Optional_pattern_Context * /*ctx*/) override { }
   virtual void exitOptional_pattern_(AtemParser::Optional_pattern_Context * /*ctx*/) override { }

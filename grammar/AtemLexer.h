@@ -68,20 +68,23 @@ public:
     BitRightShift = 199, PointerType = 200, PointerDeref = 201, ObjectAddress = 202, 
     Reflect = 203, Reify = 204, ClosedRange = 205, RightOpenRange = 206, 
     LeftOpenRange = 207, OpenedRange = 208, DefaultUnwrapping = 209, Arrow = 210, 
-    PlaceholderPipeline = 211, LeftThreadingPipeline = 212, OperatorHeadOther = 213, 
-    OperatorFollowingCharacter = 214, Whitespace = 215, Newline = 216, LineComment = 217, 
-    InnerLineDocComment = 218, OuterLineDocComment = 219, BlockComment = 220, 
-    InnerBlockComment = 221, OuterBlockComment = 222, BlockCommentOrDoc = 223, 
-    MultiLineExtendedStringOpen = 224, SingleLineExtendedStringOpen = 225, 
-    MultiLineStringOpen = 226, SingleLineStringOpen = 227, InterpolataionSingleLine = 228, 
-    SingleLineStringClose = 229, QuotedSingleLineText = 230, InterpolataionMultiLine = 231, 
-    MultiLineStringClose = 232, QuotedMultiLineText = 233, SingleLineExtendedStringClose = 234, 
-    QuotedSingleLineExtendedText = 235, MultiLineExtendedStringClose = 236, 
-    QuotedMultiLineExtendedText = 237
+    PlaceholderPipeline = 211, LeftThreadingPipeline = 212, Builtin = 213, 
+    OperatorHeadOther = 214, OperatorFollowingCharacter = 215, Whitespace = 216, 
+    Newline = 217, LineComment = 218, InnerLineDocComment = 219, OuterLineDocComment = 220, 
+    BlockComment = 221, InnerBlockComment = 222, OuterBlockComment = 223, 
+    BlockCommentOrDoc = 224, MultiLineExtendedStringOpen = 225, SingleLineExtendedStringOpen = 226, 
+    MultiLineStringOpen = 227, SingleLineStringOpen = 228, InterpolataionSingleLine = 229, 
+    SingleLineStringClose = 230, QuotedSingleLineText = 231, InterpolataionMultiLine = 232, 
+    MultiLineStringClose = 233, QuotedMultiLineText = 234, SingleLineExtendedStringClose = 235, 
+    QuotedSingleLineExtendedText = 236, MultiLineExtendedStringClose = 237, 
+    QuotedMultiLineExtendedText = 238, CharLiteralOpen = 239, ValidChar = 240, 
+    CharLiteralClose = 241, BuiltinCompileError = 242, BuiltinCompileInfo = 243, 
+    BuiltinCompileWarning = 244
   };
 
   enum {
-    SingleLine = 1, MultiLine = 2, SingleLineExtended = 3, MultiLineExtended = 4
+    SingleLine = 1, MultiLine = 2, SingleLineExtended = 3, MultiLineExtended = 4, 
+    CharLiteral = 5, BuiltinFunction = 6
   };
 
   explicit AtemLexer(antlr4::CharStream *input);
