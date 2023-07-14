@@ -1,0 +1,162 @@
+public AllocatorConfig := struct member {
+    stack_trace_frame: USize = var if std.build.is_test then 8 else 4
+    enable_memory_limit: Bool = var false
+    safety: Bool = var std.build.runtime_safety
+    thread_safe: Bool = var not std.build.single_threaded
+    MutexType: ?type = var null
+    never_unmap: Bool = var false
+    retain_metadata: Bool = var false
+    verbose_log: Bool = var false
+}
+
+public Check := enum {
+    ok,
+    leak
+}
+
+public GeneralPurposeAllocator := class(config: comptime Config) member {
+    backing_allocator: Allocator = var std.memory.page_allocator
+    buckets: [small_bucket_count]?BucketHeader.& = 
+        var 1 ** small_bucket_count
+    large_allocations: LargeAllocTable = var .init()
+    small_allocations: if config.safety then SmallAllocTable else Unit =
+        var if config.safety then SmallAllocTable.init() else Unit.init()
+    empty_buckets: if config.retain_metadata then ?BucketHeader.& else Unit =
+        var if config.retain_metadata then null else Unit.init()
+    
+    total_requested_bytes: #total_requested_bytes_init^.typeOf() =
+        var total_requested_bytes_init
+    requested_memory_limit: #requested_memory_limit_init^.typeOf() =
+        var requested_memory_limit_init
+
+    mutex: #mutex_init^.typeOf() = var mutex_init
+
+    total_requested_bytes_init := 
+        val if config.enable_memory_limit then 0 as USize else Unit.init()
+    requested_memory_limit_init := 
+        val if config.enable_memory_limit then USize.max as USize else Unit.init()
+    mutex_init := 
+        val if config.MutexType with MT then
+                MT.init()
+            else if config.thread_safe then
+                std.thread.Mutex.init()
+            else
+                DummyMutex.init()
+    
+    DummyMutex := struct member {
+        lock := func {}
+        unlock := func {}
+    }
+
+    stack_n := val config.stack_trace_frames
+    one_trace_size := val USize^.sizeOf() * stack_n
+    traces_per_slot := val 2
+
+    small_bucket_count := val std.math.log2(page_size)
+    largest_bucket_object_size := val 1 << (small_bucket_count - 1)
+
+    SmallAlloc := struct member {
+        requested_size: USize = var 0
+        log2_ptr_align: UInt8 = var 0
+    }
+
+    LargeAlloc := struct member {
+        bytes: []byte = var default
+        requested_size: if config.enable_memory_limit then USize else Unit = var default
+        stack_addresses: [trace_n, stack_n]USize = var default
+        freed: if config.retain_metadata then Bool = var default
+
+        trace_n := val if config.retain_metadata then traces_per_slot else 1
+
+        dumpStackTrace := func (trace_kind: TraceKind) -> Unit {
+            std.debug.dumpStackTrace(self.getStackTrace(trace_kind))
+        }
+
+        getStackTrace := func (trace_kind: TraceKind) -> std.debug.StackTrace {
+            assert trace_kind as UInt8 < trace_n 
+                with unreachable
+            stack_addresses := val self.stack_addresses[trace_kind as UInt8].&
+            len: USize = var 0
+            while len < stack_n and stack_addresses[len] != 0 {
+                len += 1
+            }
+            return (
+                .instruction_addresses = stack_addresses
+                .index = len
+            )
+        }
+
+        captureStackTrace := func (ret_addr: USize, trace_kind: TraceKind) -> Unit {
+            assert trace_kind as UInt8 < trace_n 
+                with unreachable
+            stack_addresses := val self.stack_addresses[trace_kind as UInt8].&
+            collectStackTrace(ret_addr, stack_addresses)
+        }
+    }
+    LargeAllocTable := val std.container.HashMap(K = USize, V = LargeAlloc)
+    SmallAllocTable := val std.container.HashMap(K = USize, V = SmallAlloc)
+
+    BucketHeader := struct member {
+        prev: BucketHeader.& = var default
+        next: BucketHeader.& = var default
+        page: []UInt8.& align(page_size) = var default
+        alloc_cursor: SlocIndex = var default
+        used_count: SlocIndex = var default
+
+        usedBits := func (index: USize) -> UInt8.& {
+            return (self.@ as USize + BucketHeader^.sizeOf() + index) as UInt8.&
+        }
+
+        stackTracePtr := func 
+        (
+            size_class: USize,
+            slot_index: SlocIndex,
+            trace_kind: TraceKind
+        ) -> [stack_n]USize.& {
+            start_ptr := 
+                val self.@ as Unit.& as []UInt8.& + bucketStackFramesStart(size_class)
+            addr :=
+                val start_ptr + one_trace_size * traces_per_slot * slot_index + 
+                    trace_kind as UInt8 * one_trace_size as USize
+            return addr as [stack_n]USize.&
+        }
+
+        captureStackTrace := func
+        (
+            ret_addr: USize,
+            size_class: USize,
+            slot_index: SlocIndex,
+            trace_kind: TraceKind
+        ) -> Unit {
+            stack_addresses = val self.stackTracePtr(size_class, slot_index, trace_kind)
+            collectStackTrace(ret_addr, stack_addresses)
+        }
+    }
+
+    public allocator := func {
+        return (
+            .ptr = self,
+            .vtable = (
+                .alloc = alloc,
+                .resize = resize,
+                .free = free
+            ).@
+        )
+    }
+
+    bucketStackTrace := func 
+    (
+        bucket: BucketHeader.&,
+        size_class: USize,
+        slot_index: SlocIndex,
+        trace_kind: TraceKind
+    ) -> StackTrace {
+        stack_addresses = bucket.stackTracePtr(size_class, slot_index, trace_kind)
+        len: USize = var 0
+        while len < stack_n and stack_addresses[len] != 0 then len += 1
+        return StackTrace.init{
+            .instruction_addresses = stack_addresses,
+            .index = len
+        }
+    }
+}

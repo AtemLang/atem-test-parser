@@ -590,6 +590,9 @@ public:
   virtual void enterReflect_operator(AtemParser::Reflect_operatorContext *ctx) = 0;
   virtual void exitReflect_operator(AtemParser::Reflect_operatorContext *ctx) = 0;
 
+  virtual void enterReify_operator(AtemParser::Reify_operatorContext *ctx) = 0;
+  virtual void exitReify_operator(AtemParser::Reify_operatorContext *ctx) = 0;
+
   virtual void enterRange_operator(AtemParser::Range_operatorContext *ctx) = 0;
   virtual void exitRange_operator(AtemParser::Range_operatorContext *ctx) = 0;
 
@@ -719,6 +722,9 @@ public:
   virtual void enterNegation_expression_(AtemParser::Negation_expression_Context *ctx) = 0;
   virtual void exitNegation_expression_(AtemParser::Negation_expression_Context *ctx) = 0;
 
+  virtual void enterReify_expression_(AtemParser::Reify_expression_Context *ctx) = 0;
+  virtual void exitReify_expression_(AtemParser::Reify_expression_Context *ctx) = 0;
+
   virtual void enterPlaceholder_expression_(AtemParser::Placeholder_expression_Context *ctx) = 0;
   virtual void exitPlaceholder_expression_(AtemParser::Placeholder_expression_Context *ctx) = 0;
 
@@ -739,9 +745,6 @@ public:
 
   virtual void enterPath_expression_(AtemParser::Path_expression_Context *ctx) = 0;
   virtual void exitPath_expression_(AtemParser::Path_expression_Context *ctx) = 0;
-
-  virtual void enterReflection_expression_(AtemParser::Reflection_expression_Context *ctx) = 0;
-  virtual void exitReflection_expression_(AtemParser::Reflection_expression_Context *ctx) = 0;
 
   virtual void enterTry_expression_(AtemParser::Try_expression_Context *ctx) = 0;
   virtual void exitTry_expression_(AtemParser::Try_expression_Context *ctx) = 0;
@@ -797,6 +800,9 @@ public:
   virtual void enterReturn_expression_(AtemParser::Return_expression_Context *ctx) = 0;
   virtual void exitReturn_expression_(AtemParser::Return_expression_Context *ctx) = 0;
 
+  virtual void enterReflect_expression_(AtemParser::Reflect_expression_Context *ctx) = 0;
+  virtual void exitReflect_expression_(AtemParser::Reflect_expression_Context *ctx) = 0;
+
   virtual void enterAssert_expression_(AtemParser::Assert_expression_Context *ctx) = 0;
   virtual void exitAssert_expression_(AtemParser::Assert_expression_Context *ctx) = 0;
 
@@ -842,6 +848,9 @@ public:
   virtual void enterType_expression_or_block(AtemParser::Type_expression_or_blockContext *ctx) = 0;
   virtual void exitType_expression_or_block(AtemParser::Type_expression_or_blockContext *ctx) = 0;
 
+  virtual void enterThen_type_expression_or_then_block(AtemParser::Then_type_expression_or_then_blockContext *ctx) = 0;
+  virtual void exitThen_type_expression_or_then_block(AtemParser::Then_type_expression_or_then_blockContext *ctx) = 0;
+
   virtual void enterIf_expression(AtemParser::If_expressionContext *ctx) = 0;
   virtual void exitIf_expression(AtemParser::If_expressionContext *ctx) = 0;
 
@@ -856,6 +865,21 @@ public:
 
   virtual void enterForeach_expression(AtemParser::Foreach_expressionContext *ctx) = 0;
   virtual void exitForeach_expression(AtemParser::Foreach_expressionContext *ctx) = 0;
+
+  virtual void enterIf_type_expression(AtemParser::If_type_expressionContext *ctx) = 0;
+  virtual void exitIf_type_expression(AtemParser::If_type_expressionContext *ctx) = 0;
+
+  virtual void enterWhile_type_expression(AtemParser::While_type_expressionContext *ctx) = 0;
+  virtual void exitWhile_type_expression(AtemParser::While_type_expressionContext *ctx) = 0;
+
+  virtual void enterRepeat_while_type_expression(AtemParser::Repeat_while_type_expressionContext *ctx) = 0;
+  virtual void exitRepeat_while_type_expression(AtemParser::Repeat_while_type_expressionContext *ctx) = 0;
+
+  virtual void enterFor_type_expression(AtemParser::For_type_expressionContext *ctx) = 0;
+  virtual void exitFor_type_expression(AtemParser::For_type_expressionContext *ctx) = 0;
+
+  virtual void enterForeach_type_expression(AtemParser::Foreach_type_expressionContext *ctx) = 0;
+  virtual void exitForeach_type_expression(AtemParser::Foreach_type_expressionContext *ctx) = 0;
 
   virtual void enterMatch_case(AtemParser::Match_caseContext *ctx) = 0;
   virtual void exitMatch_case(AtemParser::Match_caseContext *ctx) = 0;
