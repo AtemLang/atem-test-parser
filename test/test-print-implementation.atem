@@ -4,7 +4,7 @@ Writer := struct member {
             start,
             open_brace,
             close_brace,
-        }
+        } 
 
         start_index: UInt128 = var comptime 0
         state := var comptime State.start
@@ -16,12 +16,12 @@ Writer := struct member {
                     .start: c match {
                         '{': {
                             if start_index < i then
-                                try self.write(format.[start_index...i])
+                                try self.write(format[start_index...i])
                             state = .open_brace
                         }
                         '}': {
                             if start_index < i then
-                                try self.write(format.[start_index...i])
+                                try self.write(format[start_index...i])
                             state = .close_brace
                         }
                     } else {}
@@ -44,7 +44,7 @@ Writer := struct member {
                         }
                     } else ##compileError("Unmatched '}' in format string")
                 }
-            }
+            } then i += 1
         comptime if arg.length != next_arg then ##compileError("Unused format arguments")
         comptime if state != .start then ##compileError("Incomplete format string {}", format)
         if start_index < format.length then
@@ -64,3 +64,11 @@ Writer := struct member {
         _ = self;
     }
 }
+
+asm {
+
+}
+
+asm ("
+
+")
