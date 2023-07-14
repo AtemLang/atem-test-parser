@@ -31,7 +31,7 @@ Writer := struct member {
                             start_index = i
                         }
                         '}': {
-                            try self.printValue(args.[next_arg])
+                            try self.printValue(args[next_arg])
                             next_arg += 1
                             state = .start
                             start_index = i + 1
@@ -64,11 +64,3 @@ Writer := struct member {
         _ = self;
     }
 }
-
-asm {
-
-}
-
-asm ("
-
-")

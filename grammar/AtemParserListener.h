@@ -1,5 +1,5 @@
 
-// Generated from .\AtemParser.g4 by ANTLR 4.13.0
+// Generated from D:\Repos\atem\grammar\AtemParser.g4 by ANTLR 4.13.0
 
 #pragma once
 
@@ -151,6 +151,9 @@ public:
 
   virtual void enterImpl_members(AtemParser::Impl_membersContext *ctx) = 0;
   virtual void exitImpl_members(AtemParser::Impl_membersContext *ctx) = 0;
+
+  virtual void enterDefault_clause(AtemParser::Default_clauseContext *ctx) = 0;
+  virtual void exitDefault_clause(AtemParser::Default_clauseContext *ctx) = 0;
 
   virtual void enterAssociated_type_impl(AtemParser::Associated_type_implContext *ctx) = 0;
   virtual void exitAssociated_type_impl(AtemParser::Associated_type_implContext *ctx) = 0;
@@ -407,15 +410,6 @@ public:
   virtual void enterProject_declaration(AtemParser::Project_declarationContext *ctx) = 0;
   virtual void exitProject_declaration(AtemParser::Project_declarationContext *ctx) = 0;
 
-  virtual void enterProject_member_list(AtemParser::Project_member_listContext *ctx) = 0;
-  virtual void exitProject_member_list(AtemParser::Project_member_listContext *ctx) = 0;
-
-  virtual void enterProject_member(AtemParser::Project_memberContext *ctx) = 0;
-  virtual void exitProject_member(AtemParser::Project_memberContext *ctx) = 0;
-
-  virtual void enterProject_members(AtemParser::Project_membersContext *ctx) = 0;
-  virtual void exitProject_members(AtemParser::Project_membersContext *ctx) = 0;
-
   virtual void enterPackage_declaration(AtemParser::Package_declarationContext *ctx) = 0;
   virtual void exitPackage_declaration(AtemParser::Package_declarationContext *ctx) = 0;
 
@@ -424,9 +418,6 @@ public:
 
   virtual void enterPackage_member(AtemParser::Package_memberContext *ctx) = 0;
   virtual void exitPackage_member(AtemParser::Package_memberContext *ctx) = 0;
-
-  virtual void enterPackage_members(AtemParser::Package_membersContext *ctx) = 0;
-  virtual void exitPackage_members(AtemParser::Package_membersContext *ctx) = 0;
 
   virtual void enterModule_declaration(AtemParser::Module_declarationContext *ctx) = 0;
   virtual void exitModule_declaration(AtemParser::Module_declarationContext *ctx) = 0;
@@ -650,11 +641,20 @@ public:
   virtual void enterWildcard_expression_(AtemParser::Wildcard_expression_Context *ctx) = 0;
   virtual void exitWildcard_expression_(AtemParser::Wildcard_expression_Context *ctx) = 0;
 
+  virtual void enterAggregate_initialization_expression_(AtemParser::Aggregate_initialization_expression_Context *ctx) = 0;
+  virtual void exitAggregate_initialization_expression_(AtemParser::Aggregate_initialization_expression_Context *ctx) = 0;
+
   virtual void enterCatch_expression_(AtemParser::Catch_expression_Context *ctx) = 0;
   virtual void exitCatch_expression_(AtemParser::Catch_expression_Context *ctx) = 0;
 
+  virtual void enterForeach_expression_(AtemParser::Foreach_expression_Context *ctx) = 0;
+  virtual void exitForeach_expression_(AtemParser::Foreach_expression_Context *ctx) = 0;
+
   virtual void enterThrow_expression_(AtemParser::Throw_expression_Context *ctx) = 0;
   virtual void exitThrow_expression_(AtemParser::Throw_expression_Context *ctx) = 0;
+
+  virtual void enterAssembly_expression_(AtemParser::Assembly_expression_Context *ctx) = 0;
+  virtual void exitAssembly_expression_(AtemParser::Assembly_expression_Context *ctx) = 0;
 
   virtual void enterBinary_optional_unwrapping_expression_(AtemParser::Binary_optional_unwrapping_expression_Context *ctx) = 0;
   virtual void exitBinary_optional_unwrapping_expression_(AtemParser::Binary_optional_unwrapping_expression_Context *ctx) = 0;
@@ -767,6 +767,9 @@ public:
   virtual void enterDeinit_expression_(AtemParser::Deinit_expression_Context *ctx) = 0;
   virtual void exitDeinit_expression_(AtemParser::Deinit_expression_Context *ctx) = 0;
 
+  virtual void enterAssume_expression_(AtemParser::Assume_expression_Context *ctx) = 0;
+  virtual void exitAssume_expression_(AtemParser::Assume_expression_Context *ctx) = 0;
+
   virtual void enterAwait_expression_(AtemParser::Await_expression_Context *ctx) = 0;
   virtual void exitAwait_expression_(AtemParser::Await_expression_Context *ctx) = 0;
 
@@ -809,6 +812,15 @@ public:
   virtual void enterCode_block_expression_(AtemParser::Code_block_expression_Context *ctx) = 0;
   virtual void exitCode_block_expression_(AtemParser::Code_block_expression_Context *ctx) = 0;
 
+  virtual void enterAggregate_initialization_expression(AtemParser::Aggregate_initialization_expressionContext *ctx) = 0;
+  virtual void exitAggregate_initialization_expression(AtemParser::Aggregate_initialization_expressionContext *ctx) = 0;
+
+  virtual void enterAggregate_initialization_list(AtemParser::Aggregate_initialization_listContext *ctx) = 0;
+  virtual void exitAggregate_initialization_list(AtemParser::Aggregate_initialization_listContext *ctx) = 0;
+
+  virtual void enterAggregate_initialization_member(AtemParser::Aggregate_initialization_memberContext *ctx) = 0;
+  virtual void exitAggregate_initialization_member(AtemParser::Aggregate_initialization_memberContext *ctx) = 0;
+
   virtual void enterCode_block_expression(AtemParser::Code_block_expressionContext *ctx) = 0;
   virtual void exitCode_block_expression(AtemParser::Code_block_expressionContext *ctx) = 0;
 
@@ -817,6 +829,9 @@ public:
 
   virtual void enterThen_expression_or_block(AtemParser::Then_expression_or_blockContext *ctx) = 0;
   virtual void exitThen_expression_or_block(AtemParser::Then_expression_or_blockContext *ctx) = 0;
+
+  virtual void enterThen_expression_or_then_block(AtemParser::Then_expression_or_then_blockContext *ctx) = 0;
+  virtual void exitThen_expression_or_then_block(AtemParser::Then_expression_or_then_blockContext *ctx) = 0;
 
   virtual void enterExpression_or_block(AtemParser::Expression_or_blockContext *ctx) = 0;
   virtual void exitExpression_or_block(AtemParser::Expression_or_blockContext *ctx) = 0;
@@ -838,6 +853,9 @@ public:
 
   virtual void enterFor_expression(AtemParser::For_expressionContext *ctx) = 0;
   virtual void exitFor_expression(AtemParser::For_expressionContext *ctx) = 0;
+
+  virtual void enterForeach_expression(AtemParser::Foreach_expressionContext *ctx) = 0;
+  virtual void exitForeach_expression(AtemParser::Foreach_expressionContext *ctx) = 0;
 
   virtual void enterMatch_case(AtemParser::Match_caseContext *ctx) = 0;
   virtual void exitMatch_case(AtemParser::Match_caseContext *ctx) = 0;

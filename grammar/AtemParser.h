@@ -1,5 +1,5 @@
 
-// Generated from .\AtemParser.g4 by ANTLR 4.13.0
+// Generated from D:\Repos\atem\grammar\AtemParser.g4 by ANTLR 4.13.0
 
 #pragma once
 
@@ -12,71 +12,72 @@
 class  AtemParser : public antlr4::Parser {
 public:
   enum {
-    KeywordAbstract = 1, KeywordAlias = 2, KeywordAnd = 3, KeywordAny = 4, 
-    KeywordAs = 5, KeywordAsm = 6, KeywordAssert = 7, KeywordAsync = 8, 
-    KeywordAt = 9, KeywordAwait = 10, KeywordBool = 11, KeywordBreak = 12, 
-    KeywordByte = 13, KeywordCase = 14, KeywordCatch = 15, KeywordChar8 = 16, 
-    KeywordChar16 = 17, KeywordChar32 = 18, KeywordClass = 19, KeywordCompileTimeInt = 20, 
-    KeywordCompileTimeFloat = 21, KeywordCompileTimeString = 22, KeywordCompileTimeChar = 23, 
-    KeywordComptime = 24, KeywordConcept = 25, KeywordConst = 26, KeywordContinue = 27, 
-    KeywordDefault = 28, KeywordDefer = 29, KeywordDeinit = 30, KeywordDelete = 31, 
-    KeywordDo = 32, KeywordDyn = 33, KeywordElse = 34, KeywordEnsure = 35, 
-    KeywordEnum = 36, KeywordExpect = 37, KeywordExtend = 38, KeywordExtern = 39, 
-    KeywordFail = 40, KeywordFallthrough = 41, KeywordFalse = 42, KeywordFilePrivate = 43, 
-    KeywordFinal = 44, KeywordFloat16 = 45, KeywordFloat32 = 46, KeywordFloat64 = 47, 
-    KeywordFloat80 = 48, KeywordFloat128 = 49, KeywordFor = 50, KeywordForward = 51, 
-    KeywordFunc = 52, KeywordGet = 53, KeywordGlobal = 54, KeywordIf = 55, 
-    KeywordImpl = 56, KeywordImport = 57, KeywordIn = 58, KeywordInherit = 59, 
-    KeywordInline = 60, KeywordInit = 61, KeywordInt8 = 62, KeywordInt16 = 63, 
-    KeywordInt32 = 64, KeywordInt64 = 65, KeywordInt128 = 66, KeywordInternal = 67, 
-    KeywordIs = 68, KeywordLazy = 69, KeywordLet = 70, KeywordMatch = 71, 
-    KeywordMember = 72, KeywordModule = 73, KeywordMutable = 74, KeywordNamespace = 75, 
-    KeywordNew = 76, KeywordNever = 77, KeywordNot = 78, KeywordNull = 79, 
-    KeywordOpaque = 80, KeywordOpen = 81, KeywordOperator = 82, KeywordOr = 83, 
-    KeywordOuter = 84, KeywordOverride = 85, KeywordPackage = 86, KeywordPrivate = 87, 
-    KeywordProject = 88, KeywordProtocol = 89, KeywordPublic = 90, KeywordPure = 91, 
-    KeywordRecursive = 92, KeywordReloc = 93, KeywordRequire = 94, KeywordRepeat = 95, 
-    KeywordReturn = 96, KeywordSelf = 97, KeywordSet = 98, KeywordSome = 99, 
-    KeywordStatic = 100, KeywordString = 101, KeywordStruct = 102, KeywordSuccess = 103, 
-    KeywordSuper = 104, KeywordTest = 105, KeywordThen = 106, KeywordThis = 107, 
-    KeywordThreadLocal = 108, KeywordThrow = 109, KeywordThrows = 110, KeywordTrue = 111, 
-    KeywordTry = 112, KeywordType = 113, KeywordUInt8 = 114, KeywordUInt16 = 115, 
-    KeywordUInt32 = 116, KeywordUInt64 = 117, KeywordUInt128 = 118, KeywordUndefined = 119, 
-    KeywordUnion = 120, KeywordUnit = 121, KeywordUnreachable = 122, KeywordUse = 123, 
-    KeywordUsing = 124, KeywordVal = 125, KeywordVar = 126, KeywordVirtual = 127, 
-    KeywordWhile = 128, KeywordWith = 129, Identifier = 130, BinaryLiteral = 131, 
-    OctalLiteral = 132, DecimalDigits = 133, DecimalLiteral = 134, HexadecimalLiteral = 135, 
-    FloatingPointLiteral = 136, LeftCurly = 137, RightCurly = 138, LeftParenthese = 139, 
-    RightParenthese = 140, LeftSquare = 141, RightSquare = 142, Dot = 143, 
-    Colon = 144, Semicolon = 145, Comma = 146, At = 147, Question = 148, 
-    Bang = 149, Underscore = 150, Add = 151, OverflowingAdd = 152, SaturatingAdd = 153, 
-    Sub = 154, OverflowingSub = 155, SaturatingSub = 156, Mul = 157, OverflowingMul = 158, 
-    SaturatingMul = 159, Divide = 160, RemainderDivide = 161, Power = 162, 
-    OverflowingPower = 163, SaturatingPower = 164, Assign = 165, AddAssign = 166, 
-    OverflowingAddAssign = 167, SaturatingAddAssign = 168, SubAssign = 169, 
-    OverflowingSubAssign = 170, SaturatingSubAssign = 171, MulAssign = 172, 
-    OverflowingMulAssign = 173, SaturatingMulAssign = 174, PowerAssign = 175, 
-    OverflowingPowerAssign = 176, SaturatingPowerAssign = 177, DivideAssign = 178, 
-    RemainderDivideAssign = 179, BitLeftShiftAssign = 180, SaturatingBitLeftShiftAssign = 181, 
-    BitRightShiftAssign = 182, BitAndAssign = 183, BitOrAssign = 184, BitNotAssign = 185, 
-    GreaterThan = 186, LessThan = 187, GreaterThanOrEqual = 188, LessThanOrEqual = 189, 
-    NotEqual = 190, Equal = 191, ThreeWayComparison = 192, BitNot = 193, 
-    BitAnd = 194, BitOr = 195, BitXor = 196, BitLeftShift = 197, SaturatingBitLeftShift = 198, 
-    BitRightShift = 199, PointerType = 200, PointerDeref = 201, ObjectAddress = 202, 
-    Reflect = 203, Reify = 204, ClosedRange = 205, RightOpenRange = 206, 
-    LeftOpenRange = 207, OpenedRange = 208, DefaultUnwrapping = 209, Arrow = 210, 
-    PlaceholderPipeline = 211, LeftThreadingPipeline = 212, Builtin = 213, 
-    OperatorHeadOther = 214, OperatorFollowingCharacter = 215, Whitespace = 216, 
-    Newline = 217, LineComment = 218, InnerLineDocComment = 219, OuterLineDocComment = 220, 
-    BlockComment = 221, InnerBlockComment = 222, OuterBlockComment = 223, 
-    BlockCommentOrDoc = 224, MultiLineExtendedStringOpen = 225, SingleLineExtendedStringOpen = 226, 
-    MultiLineStringOpen = 227, SingleLineStringOpen = 228, InterpolataionSingleLine = 229, 
-    SingleLineStringClose = 230, QuotedSingleLineText = 231, InterpolataionMultiLine = 232, 
-    MultiLineStringClose = 233, QuotedMultiLineText = 234, SingleLineExtendedStringClose = 235, 
-    QuotedSingleLineExtendedText = 236, MultiLineExtendedStringClose = 237, 
-    QuotedMultiLineExtendedText = 238, CharLiteralOpen = 239, ValidChar = 240, 
-    CharLiteralClose = 241, BuiltinCompileError = 242, BuiltinCompileInfo = 243, 
-    BuiltinCompileWarning = 244
+    KeywordAbstract = 1, KeywordAlias = 2, KeywordAlign = 3, KeywordAnd = 4, 
+    KeywordAny = 5, KeywordAs = 6, KeywordAsm = 7, KeywordAssert = 8, KeywordAssume = 9, 
+    KeywordAsync = 10, KeywordAt = 11, KeywordAwait = 12, KeywordBool = 13, 
+    KeywordBreak = 14, KeywordByte = 15, KeywordCase = 16, KeywordCatch = 17, 
+    KeywordChar8 = 18, KeywordChar16 = 19, KeywordChar32 = 20, KeywordClass = 21, 
+    KeywordCompileTimeInt = 22, KeywordCompileTimeFloat = 23, KeywordCompileTimeString = 24, 
+    KeywordCompileTimeChar = 25, KeywordComptime = 26, KeywordConcept = 27, 
+    KeywordConst = 28, KeywordContinue = 29, KeywordDefault = 30, KeywordDefer = 31, 
+    KeywordDeinit = 32, KeywordDelete = 33, KeywordDo = 34, KeywordDyn = 35, 
+    KeywordElse = 36, KeywordEnsure = 37, KeywordEnum = 38, KeywordExpect = 39, 
+    KeywordExtend = 40, KeywordExtern = 41, KeywordFail = 42, KeywordFallthrough = 43, 
+    KeywordFalse = 44, KeywordFilePrivate = 45, KeywordFinal = 46, KeywordFloat16 = 47, 
+    KeywordFloat32 = 48, KeywordFloat64 = 49, KeywordFloat80 = 50, KeywordFloat128 = 51, 
+    KeywordFor = 52, KeywordForeach = 53, KeywordForward = 54, KeywordFunc = 55, 
+    KeywordGet = 56, KeywordGlobal = 57, KeywordIf = 58, KeywordImpl = 59, 
+    KeywordImport = 60, KeywordIn = 61, KeywordInherit = 62, KeywordInline = 63, 
+    KeywordInit = 64, KeywordInt8 = 65, KeywordInt16 = 66, KeywordInt32 = 67, 
+    KeywordInt64 = 68, KeywordInt128 = 69, KeywordInternal = 70, KeywordIs = 71, 
+    KeywordLazy = 72, KeywordLet = 73, KeywordMatch = 74, KeywordMember = 75, 
+    KeywordModule = 76, KeywordMutable = 77, KeywordNamespace = 78, KeywordNew = 79, 
+    KeywordNever = 80, KeywordNot = 81, KeywordNull = 82, KeywordOpaque = 83, 
+    KeywordOpen = 84, KeywordOperator = 85, KeywordOr = 86, KeywordOuter = 87, 
+    KeywordOverride = 88, KeywordPackage = 89, KeywordPrivate = 90, KeywordProject = 91, 
+    KeywordProtocol = 92, KeywordPublic = 93, KeywordPure = 94, KeywordRecursive = 95, 
+    KeywordReloc = 96, KeywordRequire = 97, KeywordRepeat = 98, KeywordReturn = 99, 
+    KeywordSelf = 100, KeywordSet = 101, KeywordSome = 102, KeywordStatic = 103, 
+    KeywordString = 104, KeywordStruct = 105, KeywordSuccess = 106, KeywordSuper = 107, 
+    KeywordTest = 108, KeywordThen = 109, KeywordThis = 110, KeywordThreadLocal = 111, 
+    KeywordThrow = 112, KeywordThrows = 113, KeywordTrue = 114, KeywordTry = 115, 
+    KeywordType = 116, KeywordUInt8 = 117, KeywordUInt16 = 118, KeywordUInt32 = 119, 
+    KeywordUInt64 = 120, KeywordUInt128 = 121, KeywordUndefined = 122, KeywordUnion = 123, 
+    KeywordUnit = 124, KeywordUnreachable = 125, KeywordUse = 126, KeywordUsing = 127, 
+    KeywordVal = 128, KeywordVar = 129, KeywordVirtual = 130, KeywordWhile = 131, 
+    KeywordWith = 132, Identifier = 133, BinaryLiteral = 134, OctalLiteral = 135, 
+    DecimalDigits = 136, DecimalLiteral = 137, HexadecimalLiteral = 138, 
+    FloatingPointLiteral = 139, LeftCurly = 140, RightCurly = 141, LeftParenthese = 142, 
+    RightParenthese = 143, LeftSquare = 144, RightSquare = 145, Dot = 146, 
+    Colon = 147, Semicolon = 148, Comma = 149, At = 150, Question = 151, 
+    Bang = 152, Underscore = 153, Add = 154, OverflowingAdd = 155, SaturatingAdd = 156, 
+    Sub = 157, OverflowingSub = 158, SaturatingSub = 159, Mul = 160, OverflowingMul = 161, 
+    SaturatingMul = 162, Divide = 163, RemainderDivide = 164, Power = 165, 
+    OverflowingPower = 166, SaturatingPower = 167, Assign = 168, AddAssign = 169, 
+    OverflowingAddAssign = 170, SaturatingAddAssign = 171, SubAssign = 172, 
+    OverflowingSubAssign = 173, SaturatingSubAssign = 174, MulAssign = 175, 
+    OverflowingMulAssign = 176, SaturatingMulAssign = 177, PowerAssign = 178, 
+    OverflowingPowerAssign = 179, SaturatingPowerAssign = 180, DivideAssign = 181, 
+    RemainderDivideAssign = 182, BitLeftShiftAssign = 183, SaturatingBitLeftShiftAssign = 184, 
+    BitRightShiftAssign = 185, BitAndAssign = 186, BitOrAssign = 187, BitNotAssign = 188, 
+    GreaterThan = 189, LessThan = 190, GreaterThanOrEqual = 191, LessThanOrEqual = 192, 
+    NotEqual = 193, Equal = 194, ThreeWayComparison = 195, BitNot = 196, 
+    BitAnd = 197, BitOr = 198, BitXor = 199, BitLeftShift = 200, SaturatingBitLeftShift = 201, 
+    BitRightShift = 202, PointerType = 203, PointerDeref = 204, ObjectAddress = 205, 
+    Reflect = 206, Reify = 207, ClosedRange = 208, RightOpenRange = 209, 
+    LeftOpenRange = 210, OpenedRange = 211, DefaultUnwrapping = 212, Arrow = 213, 
+    PlaceholderPipeline = 214, LeftThreadingPipeline = 215, Builtin = 216, 
+    OperatorHeadOther = 217, OperatorFollowingCharacter = 218, Whitespace = 219, 
+    Newline = 220, LineComment = 221, InnerLineDocComment = 222, OuterLineDocComment = 223, 
+    BlockComment = 224, InnerBlockComment = 225, OuterBlockComment = 226, 
+    BlockCommentOrDoc = 227, MultiLineExtendedStringOpen = 228, SingleLineExtendedStringOpen = 229, 
+    MultiLineStringOpen = 230, SingleLineStringOpen = 231, InterpolataionSingleLine = 232, 
+    SingleLineStringClose = 233, QuotedSingleLineText = 234, InterpolataionMultiLine = 235, 
+    MultiLineStringClose = 236, QuotedMultiLineText = 237, SingleLineExtendedStringClose = 238, 
+    QuotedSingleLineExtendedText = 239, MultiLineExtendedStringClose = 240, 
+    QuotedMultiLineExtendedText = 241, CharLiteralOpen = 242, ValidChar = 243, 
+    CharLiteralClose = 244, BuiltinCompileError = 245, BuiltinCompileInfo = 246, 
+    BuiltinCompileWarning = 247
   };
 
   enum {
@@ -95,89 +96,91 @@ public:
     RuleInherit_declarator = 35, RuleEmpty_inherit_declarator = 36, RuleInherit_name = 37, 
     RuleImpl_clause = 38, RuleImpl_list = 39, RuleImpl_item = 40, RuleImpl_items = 41, 
     RuleImpl_with_clause = 42, RuleImpl_member_list = 43, RuleImpl_member = 44, 
-    RuleImpl_members = 45, RuleAssociated_type_impl = 46, RuleAssociated_variable_impl = 47, 
-    RuleAssociated_constant_impl = 48, RuleAssociated_function_impl = 49, 
-    RuleAssociated_initializer_impl = 50, RuleAssociated_deinitializer_impl = 51, 
-    RuleAssociated_declarator = 52, RuleEmpty_associated_declarator = 53, 
-    RuleAssociated_name = 54, RuleInitializer_list = 55, RuleInitializer_member_list = 56, 
-    RuleInitializer_member = 57, RuleInitializer_type = 58, RuleInitializer_members = 59, 
-    RuleDeinitializer_list = 60, RuleDeinitializer_member_list = 61, RuleDeinitializer_member = 62, 
-    RuleDeinitializer_type = 63, RuleDeinitializer_members = 64, RuleMember_list = 65, 
-    RuleMember = 66, RuleMembers = 67, RuleMember_nested_type = 68, RuleNested_class = 69, 
-    RuleNested_struct = 70, RuleNested_protocol = 71, RuleNested_union = 72, 
-    RuleNested_enum = 73, RuleMember_type = 74, RuleMember_variable = 75, 
-    RuleMember_constant = 76, RuleMember_function = 77, RuleMember_declarator = 78, 
-    RuleMember_name = 79, RuleGetter_and_setter_list = 80, RuleGetter_list = 81, 
-    RuleGetter_and_setter_item = 82, RuleGetter_and_setter_items = 83, RuleGetter_declaration = 84, 
-    RuleGetter_type = 85, RuleSetter_declaration = 86, RuleSetter_type = 87, 
-    RuleSetter_parameter_clause = 88, RuleSetter_parameter = 89, RuleSetter_parameter_name = 90, 
-    RuleProtocol_declaration = 91, RuleProtocol_extend_list = 92, RuleProtocol_requirement_list = 93, 
-    RuleProtocol_requirement_item = 94, RuleProtocol_requirement_items = 95, 
-    RuleProtocol_requirement_type = 96, RuleProtocol_requirement_function = 97, 
-    RuleProtocol_requirement_variable = 98, RuleProtocol_requirement_constant = 99, 
-    RuleProtocol_requirement_initializer = 100, RuleProtocol_requirement_deinitializer = 101, 
-    RuleRequirement_declarator = 102, RuleEmpty_requirement_declarator = 103, 
-    RuleRequirement_name = 104, RuleRequirement_default_clause = 105, RuleRequirement_getter_and_setter = 106, 
-    RuleRequirement_getter = 107, RuleRequirement_getter_and_setter_item = 108, 
-    RuleInitializer_declaration = 109, RuleDeinitializer_declaration = 110, 
-    RuleUnion_declaration = 111, RuleEnum_declaration = 112, RuleEnumerator_list = 113, 
-    RuleEnumeration_item = 114, RuleEnumerator = 115, RuleEnumerator_associated_value_clause = 116, 
-    RuleEnumerator_associated_value_list = 117, RuleEnumerator_associated_value = 118, 
-    RuleEnumerator_associated_value_name = 119, RuleEnumerator_representation = 120, 
-    RuleEnumerator_name = 121, RuleImport_alias_declaration = 122, RuleImport_expression = 123, 
-    RuleImport_statement = 124, RuleImport_path_expression_list = 125, RuleImport_path_expression = 126, 
-    RuleImport_path_expression_element = 127, RuleImport_element_list = 128, 
-    RuleImport_kind = 129, RuleProject_declaration = 130, RuleProject_member_list = 131, 
-    RuleProject_member = 132, RuleProject_members = 133, RulePackage_declaration = 134, 
-    RulePackage_member_list = 135, RulePackage_member = 136, RulePackage_members = 137, 
-    RuleModule_declaration = 138, RuleNamespace_declaration = 139, RuleTypealias_declaration = 140, 
-    RuleAccess_level_specifier = 141, RuleFunction_declaration = 142, RuleFunction_body = 143, 
-    RuleContract_list = 144, RuleContract = 145, RuleContract_precondition = 146, 
-    RuleContract_postcondition = 147, RuleReturn_value_name = 148, RuleFunction_name = 149, 
-    RuleFunction_type = 150, RuleFunction_specifier = 151, RuleFunction_specifiers = 152, 
-    RuleFunction_result = 153, RuleFunction_parameter_clause = 154, RuleFunction_parameter_list = 155, 
-    RuleFunction_parameter = 156, RuleFunction_parameter_label = 157, RuleFunction_parameter_name = 158, 
-    RuleDefault_argument_clause = 159, RuleType_annotation = 160, RuleVariable_declaration = 161, 
-    RuleConstant_declaration = 162, RuleStorage_level_specifier = 163, RuleClosure_expression = 164, 
-    RuleCapture_list = 165, RuleCapture_list_items = 166, RuleCapture_list_item = 167, 
-    RuleDefer_statement = 168, RuleDefer_kind = 169, RuleCode_block_no_label = 170, 
-    RuleCode_block = 171, RuleCode_block_name = 172, RuleAttribute = 173, 
-    RuleAttributes = 174, RuleAttribute_name = 175, RuleFunction_call_operator = 176, 
-    RuleFunction_call_argument_clause = 177, RuleFunction_call_argument_list = 178, 
-    RuleFunction_call_argument = 179, RuleArgument_name = 180, RuleArgument_names = 181, 
-    RuleTrailing_closures = 182, RuleLabeled_trailing_closure = 183, RuleLabeled_trailing_closures = 184, 
-    RuleArithmetic_operator = 185, RuleNegation_operator = 186, RuleAssignment_operator = 187, 
-    RuleComparison_operator = 188, RuleBinary_boolean_operator = 189, RuleUnary_boolean_operator = 190, 
-    RuleBinary_bit_operator = 191, RuleUnary_bit_operator = 192, RulePointer_operator = 193, 
-    RuleReflect_operator = 194, RuleRange_operator = 195, RuleBinary_optional_unwrapping_operator = 196, 
-    RuleUnary_optional_unwrapping_operator = 197, RuleArrow_operator = 198, 
-    RuleTry_operator = 199, RuleType_casting_operator = 200, RuleAwait_operator = 201, 
-    RuleAsync_operator = 202, RulePipeline_operator = 203, RuleArray_index_operator = 204, 
-    RuleTuple_index_operator = 205, RuleBuiltin_function_operator = 206, 
-    RuleBuiltin_function_name = 207, RuleExpression = 208, RuleCode_block_expression = 209, 
-    RuleRequire_clause = 210, RuleThen_expression_or_block = 211, RuleExpression_or_block = 212, 
-    RuleThen_type_expression_or_block = 213, RuleType_expression_or_block = 214, 
-    RuleIf_expression = 215, RuleWhile_expression = 216, RuleRepeat_while_expression = 217, 
-    RuleFor_expression = 218, RuleMatch_case = 219, RuleMatch_case_label = 220, 
-    RuleMatch_item_list = 221, RuleType_expression = 222, RuleBasic_type = 223, 
-    RuleCollection_type = 224, RuleNever_type = 225, RuleTuple_type = 226, 
-    RuleTuple_type_element = 227, RuleOptional_type = 228, RuleAny_type = 229, 
-    RuleSome_type = 230, RuleStatic_array_type = 231, RuleDynamic_array_type = 232, 
-    RuleMap_type = 233, RuleSet_type = 234, RuleConst_type = 235, RuleSimple_type = 236, 
-    RuleInteger_type = 237, RuleFloating_point_type = 238, RuleBoolean_type = 239, 
-    RuleByte_type = 240, RuleUnit_type = 241, RuleCharacter_type = 242, 
-    RuleString_type = 243, RuleComptime_type = 244, RuleType_type = 245, 
-    RuleTuple_expression = 246, RuleTuple_element_list = 247, RuleTuple_element = 248, 
-    RulePath_expression = 249, RulePath_expression_element = 250, RuleLiteral_expression = 251, 
-    RuleLiteral = 252, RuleNumeric_literal = 253, RuleInteger_literal = 254, 
-    RuleFloating_point_literal = 255, RuleBoolean_literal = 256, RuleNull_literal = 257, 
-    RuleUndefined_literal = 258, RuleDefault_literal = 259, RuleArray_literal = 260, 
-    RuleString_literal = 261, RuleExtended_string_literal = 262, RuleStatic_string_literal = 263, 
-    RuleInterpolated_string_literal = 264, RuleChar_literal = 265, RulePattern = 266, 
-    RuleTuple_pattern_element_list = 267, RuleTuple_pattern_element = 268, 
-    RuleWildcard_pattern = 269, RuleIdentifier_pattern = 270, RuleValue_binding_pattern = 271, 
-    RuleTuple_pattern = 272, RuleEnumerator_pattern = 273, RuleOptional_pattern = 274, 
-    RuleExpression_pattern = 275
+    RuleImpl_members = 45, RuleDefault_clause = 46, RuleAssociated_type_impl = 47, 
+    RuleAssociated_variable_impl = 48, RuleAssociated_constant_impl = 49, 
+    RuleAssociated_function_impl = 50, RuleAssociated_initializer_impl = 51, 
+    RuleAssociated_deinitializer_impl = 52, RuleAssociated_declarator = 53, 
+    RuleEmpty_associated_declarator = 54, RuleAssociated_name = 55, RuleInitializer_list = 56, 
+    RuleInitializer_member_list = 57, RuleInitializer_member = 58, RuleInitializer_type = 59, 
+    RuleInitializer_members = 60, RuleDeinitializer_list = 61, RuleDeinitializer_member_list = 62, 
+    RuleDeinitializer_member = 63, RuleDeinitializer_type = 64, RuleDeinitializer_members = 65, 
+    RuleMember_list = 66, RuleMember = 67, RuleMembers = 68, RuleMember_nested_type = 69, 
+    RuleNested_class = 70, RuleNested_struct = 71, RuleNested_protocol = 72, 
+    RuleNested_union = 73, RuleNested_enum = 74, RuleMember_type = 75, RuleMember_variable = 76, 
+    RuleMember_constant = 77, RuleMember_function = 78, RuleMember_declarator = 79, 
+    RuleMember_name = 80, RuleGetter_and_setter_list = 81, RuleGetter_list = 82, 
+    RuleGetter_and_setter_item = 83, RuleGetter_and_setter_items = 84, RuleGetter_declaration = 85, 
+    RuleGetter_type = 86, RuleSetter_declaration = 87, RuleSetter_type = 88, 
+    RuleSetter_parameter_clause = 89, RuleSetter_parameter = 90, RuleSetter_parameter_name = 91, 
+    RuleProtocol_declaration = 92, RuleProtocol_extend_list = 93, RuleProtocol_requirement_list = 94, 
+    RuleProtocol_requirement_item = 95, RuleProtocol_requirement_items = 96, 
+    RuleProtocol_requirement_type = 97, RuleProtocol_requirement_function = 98, 
+    RuleProtocol_requirement_variable = 99, RuleProtocol_requirement_constant = 100, 
+    RuleProtocol_requirement_initializer = 101, RuleProtocol_requirement_deinitializer = 102, 
+    RuleRequirement_declarator = 103, RuleEmpty_requirement_declarator = 104, 
+    RuleRequirement_name = 105, RuleRequirement_default_clause = 106, RuleRequirement_getter_and_setter = 107, 
+    RuleRequirement_getter = 108, RuleRequirement_getter_and_setter_item = 109, 
+    RuleInitializer_declaration = 110, RuleDeinitializer_declaration = 111, 
+    RuleUnion_declaration = 112, RuleEnum_declaration = 113, RuleEnumerator_list = 114, 
+    RuleEnumeration_item = 115, RuleEnumerator = 116, RuleEnumerator_associated_value_clause = 117, 
+    RuleEnumerator_associated_value_list = 118, RuleEnumerator_associated_value = 119, 
+    RuleEnumerator_associated_value_name = 120, RuleEnumerator_representation = 121, 
+    RuleEnumerator_name = 122, RuleImport_alias_declaration = 123, RuleImport_expression = 124, 
+    RuleImport_statement = 125, RuleImport_path_expression_list = 126, RuleImport_path_expression = 127, 
+    RuleImport_path_expression_element = 128, RuleImport_element_list = 129, 
+    RuleImport_kind = 130, RuleProject_declaration = 131, RulePackage_declaration = 132, 
+    RulePackage_member_list = 133, RulePackage_member = 134, RuleModule_declaration = 135, 
+    RuleNamespace_declaration = 136, RuleTypealias_declaration = 137, RuleAccess_level_specifier = 138, 
+    RuleFunction_declaration = 139, RuleFunction_body = 140, RuleContract_list = 141, 
+    RuleContract = 142, RuleContract_precondition = 143, RuleContract_postcondition = 144, 
+    RuleReturn_value_name = 145, RuleFunction_name = 146, RuleFunction_type = 147, 
+    RuleFunction_specifier = 148, RuleFunction_specifiers = 149, RuleFunction_result = 150, 
+    RuleFunction_parameter_clause = 151, RuleFunction_parameter_list = 152, 
+    RuleFunction_parameter = 153, RuleFunction_parameter_label = 154, RuleFunction_parameter_name = 155, 
+    RuleDefault_argument_clause = 156, RuleType_annotation = 157, RuleVariable_declaration = 158, 
+    RuleConstant_declaration = 159, RuleStorage_level_specifier = 160, RuleClosure_expression = 161, 
+    RuleCapture_list = 162, RuleCapture_list_items = 163, RuleCapture_list_item = 164, 
+    RuleDefer_statement = 165, RuleDefer_kind = 166, RuleCode_block_no_label = 167, 
+    RuleCode_block = 168, RuleCode_block_name = 169, RuleAttribute = 170, 
+    RuleAttributes = 171, RuleAttribute_name = 172, RuleFunction_call_operator = 173, 
+    RuleFunction_call_argument_clause = 174, RuleFunction_call_argument_list = 175, 
+    RuleFunction_call_argument = 176, RuleArgument_name = 177, RuleArgument_names = 178, 
+    RuleTrailing_closures = 179, RuleLabeled_trailing_closure = 180, RuleLabeled_trailing_closures = 181, 
+    RuleArithmetic_operator = 182, RuleNegation_operator = 183, RuleAssignment_operator = 184, 
+    RuleComparison_operator = 185, RuleBinary_boolean_operator = 186, RuleUnary_boolean_operator = 187, 
+    RuleBinary_bit_operator = 188, RuleUnary_bit_operator = 189, RulePointer_operator = 190, 
+    RuleReflect_operator = 191, RuleRange_operator = 192, RuleBinary_optional_unwrapping_operator = 193, 
+    RuleUnary_optional_unwrapping_operator = 194, RuleArrow_operator = 195, 
+    RuleTry_operator = 196, RuleType_casting_operator = 197, RuleAwait_operator = 198, 
+    RuleAsync_operator = 199, RulePipeline_operator = 200, RuleArray_index_operator = 201, 
+    RuleTuple_index_operator = 202, RuleBuiltin_function_operator = 203, 
+    RuleBuiltin_function_name = 204, RuleExpression = 205, RuleAggregate_initialization_expression = 206, 
+    RuleAggregate_initialization_list = 207, RuleAggregate_initialization_member = 208, 
+    RuleCode_block_expression = 209, RuleRequire_clause = 210, RuleThen_expression_or_block = 211, 
+    RuleThen_expression_or_then_block = 212, RuleExpression_or_block = 213, 
+    RuleThen_type_expression_or_block = 214, RuleType_expression_or_block = 215, 
+    RuleIf_expression = 216, RuleWhile_expression = 217, RuleRepeat_while_expression = 218, 
+    RuleFor_expression = 219, RuleForeach_expression = 220, RuleMatch_case = 221, 
+    RuleMatch_case_label = 222, RuleMatch_item_list = 223, RuleType_expression = 224, 
+    RuleBasic_type = 225, RuleCollection_type = 226, RuleNever_type = 227, 
+    RuleTuple_type = 228, RuleTuple_type_element = 229, RuleOptional_type = 230, 
+    RuleAny_type = 231, RuleSome_type = 232, RuleStatic_array_type = 233, 
+    RuleDynamic_array_type = 234, RuleMap_type = 235, RuleSet_type = 236, 
+    RuleConst_type = 237, RuleSimple_type = 238, RuleInteger_type = 239, 
+    RuleFloating_point_type = 240, RuleBoolean_type = 241, RuleByte_type = 242, 
+    RuleUnit_type = 243, RuleCharacter_type = 244, RuleString_type = 245, 
+    RuleComptime_type = 246, RuleType_type = 247, RuleTuple_expression = 248, 
+    RuleTuple_element_list = 249, RuleTuple_element = 250, RulePath_expression = 251, 
+    RulePath_expression_element = 252, RuleLiteral_expression = 253, RuleLiteral = 254, 
+    RuleNumeric_literal = 255, RuleInteger_literal = 256, RuleFloating_point_literal = 257, 
+    RuleBoolean_literal = 258, RuleNull_literal = 259, RuleUndefined_literal = 260, 
+    RuleDefault_literal = 261, RuleArray_literal = 262, RuleString_literal = 263, 
+    RuleExtended_string_literal = 264, RuleStatic_string_literal = 265, 
+    RuleInterpolated_string_literal = 266, RuleChar_literal = 267, RulePattern = 268, 
+    RuleTuple_pattern_element_list = 269, RuleTuple_pattern_element = 270, 
+    RuleWildcard_pattern = 271, RuleIdentifier_pattern = 272, RuleValue_binding_pattern = 273, 
+    RuleTuple_pattern = 274, RuleEnumerator_pattern = 275, RuleOptional_pattern = 276, 
+    RuleExpression_pattern = 277
   };
 
   explicit AtemParser(antlr4::TokenStream *input);
@@ -243,6 +246,7 @@ public:
   class Impl_member_listContext;
   class Impl_memberContext;
   class Impl_membersContext;
+  class Default_clauseContext;
   class Associated_type_implContext;
   class Associated_variable_implContext;
   class Associated_constant_implContext;
@@ -328,13 +332,9 @@ public:
   class Import_element_listContext;
   class Import_kindContext;
   class Project_declarationContext;
-  class Project_member_listContext;
-  class Project_memberContext;
-  class Project_membersContext;
   class Package_declarationContext;
   class Package_member_listContext;
   class Package_memberContext;
-  class Package_membersContext;
   class Module_declarationContext;
   class Namespace_declarationContext;
   class Typealias_declarationContext;
@@ -406,9 +406,13 @@ public:
   class Builtin_function_operatorContext;
   class Builtin_function_nameContext;
   class ExpressionContext;
+  class Aggregate_initialization_expressionContext;
+  class Aggregate_initialization_listContext;
+  class Aggregate_initialization_memberContext;
   class Code_block_expressionContext;
   class Require_clauseContext;
   class Then_expression_or_blockContext;
+  class Then_expression_or_then_blockContext;
   class Expression_or_blockContext;
   class Then_type_expression_or_blockContext;
   class Type_expression_or_blockContext;
@@ -416,6 +420,7 @@ public:
   class While_expressionContext;
   class Repeat_while_expressionContext;
   class For_expressionContext;
+  class Foreach_expressionContext;
   class Match_caseContext;
   class Match_case_labelContext;
   class Match_item_listContext;
@@ -733,6 +738,7 @@ public:
     Extension_listContext *extension_list();
     Initializer_listContext *initializer_list();
     Deinitializer_listContext *deinitializer_list();
+    Enumerator_listContext *enumerator_list();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1187,6 +1193,20 @@ public:
 
   Impl_membersContext* impl_members();
 
+  class  Default_clauseContext : public antlr4::ParserRuleContext {
+  public:
+    Default_clauseContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *Assign();
+    Default_literalContext *default_literal();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Default_clauseContext* default_clause();
+
   class  Associated_type_implContext : public antlr4::ParserRuleContext {
   public:
     Associated_type_implContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -1194,6 +1214,7 @@ public:
     antlr4::tree::TerminalNode *KeywordRequire();
     Associated_declaratorContext *associated_declarator();
     Typealias_declarationContext *typealias_declaration();
+    Default_clauseContext *default_clause();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1209,6 +1230,7 @@ public:
     antlr4::tree::TerminalNode *KeywordRequire();
     Associated_declaratorContext *associated_declarator();
     Variable_declarationContext *variable_declaration();
+    Default_clauseContext *default_clause();
     Getter_and_setter_listContext *getter_and_setter_list();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1225,6 +1247,7 @@ public:
     antlr4::tree::TerminalNode *KeywordRequire();
     Associated_declaratorContext *associated_declarator();
     Constant_declarationContext *constant_declaration();
+    Default_clauseContext *default_clause();
     Getter_listContext *getter_list();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1241,6 +1264,7 @@ public:
     antlr4::tree::TerminalNode *KeywordRequire();
     Associated_declaratorContext *associated_declarator();
     Function_declarationContext *function_declaration();
+    Default_clauseContext *default_clause();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1256,6 +1280,7 @@ public:
     antlr4::tree::TerminalNode *KeywordRequire();
     Empty_declare_operatorContext *empty_declare_operator();
     Initializer_declarationContext *initializer_declaration();
+    Default_clauseContext *default_clause();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1271,6 +1296,7 @@ public:
     antlr4::tree::TerminalNode *KeywordRequire();
     Empty_declare_operatorContext *empty_declare_operator();
     Deinitializer_declarationContext *deinitializer_declaration();
+    Default_clauseContext *default_clause();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1871,6 +1897,8 @@ public:
     AttributesContext *attributes();
     Final_specifierContext *final_specifier();
     Protocol_extend_listContext *protocol_extend_list();
+    antlr4::tree::TerminalNode *KeywordWith();
+    antlr4::tree::TerminalNode *Identifier();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -2497,8 +2525,8 @@ public:
     Project_declarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordProject();
-    Project_member_listContext *project_member_list();
     AttributesContext *attributes();
+    Aggregate_initialization_listContext *aggregate_initialization_list();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -2507,56 +2535,14 @@ public:
 
   Project_declarationContext* project_declaration();
 
-  class  Project_member_listContext : public antlr4::ParserRuleContext {
-  public:
-    Project_member_listContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *KeywordThis();
-    antlr4::tree::TerminalNode *LeftCurly();
-    Project_membersContext *project_members();
-    antlr4::tree::TerminalNode *RightCurly();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-   
-  };
-
-  Project_member_listContext* project_member_list();
-
-  class  Project_memberContext : public antlr4::ParserRuleContext {
-  public:
-    Project_memberContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    Path_expressionContext *path_expression();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-   
-  };
-
-  Project_memberContext* project_member();
-
-  class  Project_membersContext : public antlr4::ParserRuleContext {
-  public:
-    Project_membersContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<Project_memberContext *> project_member();
-    Project_memberContext* project_member(size_t i);
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-   
-  };
-
-  Project_membersContext* project_members();
-
   class  Package_declarationContext : public antlr4::ParserRuleContext {
   public:
     Package_declarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordPackage();
-    Package_member_listContext *package_member_list();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
+    Package_member_listContext *package_member_list();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -2569,10 +2555,11 @@ public:
   public:
     Package_member_listContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *KeywordThis();
+    antlr4::tree::TerminalNode *KeywordMember();
     antlr4::tree::TerminalNode *LeftCurly();
-    Package_membersContext *package_members();
     antlr4::tree::TerminalNode *RightCurly();
+    std::vector<Package_memberContext *> package_member();
+    Package_memberContext* package_member(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -2594,25 +2581,12 @@ public:
 
   Package_memberContext* package_member();
 
-  class  Package_membersContext : public antlr4::ParserRuleContext {
-  public:
-    Package_membersContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<Package_memberContext *> package_member();
-    Package_memberContext* package_member(size_t i);
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-   
-  };
-
-  Package_membersContext* package_members();
-
   class  Module_declarationContext : public antlr4::ParserRuleContext {
   public:
     Module_declarationContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordModule();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
     Code_block_no_labelContext *code_block_no_label();
 
@@ -2629,6 +2603,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordNamespace();
     Code_block_no_labelContext *code_block_no_label();
+    Udt_parameter_clauseContext *udt_parameter_clause();
     AttributesContext *attributes();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -3728,6 +3703,15 @@ public:
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
 
+  class  Aggregate_initialization_expression_Context : public ExpressionContext {
+  public:
+    Aggregate_initialization_expression_Context(ExpressionContext *ctx);
+
+    Aggregate_initialization_expressionContext *aggregate_initialization_expression();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
   class  Catch_expression_Context : public ExpressionContext {
   public:
     Catch_expression_Context(ExpressionContext *ctx);
@@ -3746,12 +3730,33 @@ public:
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
 
+  class  Foreach_expression_Context : public ExpressionContext {
+  public:
+    Foreach_expression_Context(ExpressionContext *ctx);
+
+    Foreach_expressionContext *foreach_expression();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
   class  Throw_expression_Context : public ExpressionContext {
   public:
     Throw_expression_Context(ExpressionContext *ctx);
 
     antlr4::tree::TerminalNode *KeywordThrow();
     ExpressionContext *expression();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
+  class  Assembly_expression_Context : public ExpressionContext {
+  public:
+    Assembly_expression_Context(ExpressionContext *ctx);
+
+    antlr4::tree::TerminalNode *KeywordAsm();
+    antlr4::tree::TerminalNode *LeftParenthese();
+    String_literalContext *string_literal();
+    antlr4::tree::TerminalNode *RightParenthese();
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
@@ -4142,6 +4147,16 @@ public:
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
   };
 
+  class  Assume_expression_Context : public ExpressionContext {
+  public:
+    Assume_expression_Context(ExpressionContext *ctx);
+
+    antlr4::tree::TerminalNode *KeywordAssume();
+    ExpressionContext *expression();
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+  };
+
   class  Await_expression_Context : public ExpressionContext {
   public:
     Await_expression_Context(ExpressionContext *ctx);
@@ -4289,6 +4304,55 @@ public:
 
   ExpressionContext* expression();
   ExpressionContext* expression(int precedence);
+  class  Aggregate_initialization_expressionContext : public antlr4::ParserRuleContext {
+  public:
+    Aggregate_initialization_expressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Type_expressionContext *type_expression();
+    antlr4::tree::TerminalNode *Dot();
+    antlr4::tree::TerminalNode *KeywordInit();
+    Aggregate_initialization_listContext *aggregate_initialization_list();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Aggregate_initialization_expressionContext* aggregate_initialization_expression();
+
+  class  Aggregate_initialization_listContext : public antlr4::ParserRuleContext {
+  public:
+    Aggregate_initialization_listContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *LeftCurly();
+    antlr4::tree::TerminalNode *RightCurly();
+    std::vector<Aggregate_initialization_memberContext *> aggregate_initialization_member();
+    Aggregate_initialization_memberContext* aggregate_initialization_member(size_t i);
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Aggregate_initialization_listContext* aggregate_initialization_list();
+
+  class  Aggregate_initialization_memberContext : public antlr4::ParserRuleContext {
+  public:
+    Aggregate_initialization_memberContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *Dot();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    antlr4::tree::TerminalNode *Assign();
+    Aggregate_initialization_listContext *aggregate_initialization_list();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Aggregate_initialization_memberContext* aggregate_initialization_member();
+
   class  Code_block_expressionContext : public antlr4::ParserRuleContext {
   public:
     Code_block_expressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -4330,6 +4394,21 @@ public:
   };
 
   Then_expression_or_blockContext* then_expression_or_block();
+
+  class  Then_expression_or_then_blockContext : public antlr4::ParserRuleContext {
+  public:
+    Then_expression_or_then_blockContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *KeywordThen();
+    ExpressionContext *expression();
+    Code_blockContext *code_block();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Then_expression_or_then_blockContext* then_expression_or_then_block();
 
   class  Expression_or_blockContext : public antlr4::ParserRuleContext {
   public:
@@ -4397,9 +4476,8 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordWhile();
     ExpressionContext *expression();
-    std::vector<Then_expression_or_blockContext *> then_expression_or_block();
-    Then_expression_or_blockContext* then_expression_or_block(size_t i);
-    antlr4::tree::TerminalNode *KeywordWith();
+    Then_expression_or_blockContext *then_expression_or_block();
+    Then_expression_or_then_blockContext *then_expression_or_then_block();
     antlr4::tree::TerminalNode *KeywordElse();
     Expression_or_blockContext *expression_or_block();
 
@@ -4415,10 +4493,11 @@ public:
     Repeat_while_expressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *KeywordRepeat();
-    ExpressionContext *expression();
-    std::vector<Then_expression_or_blockContext *> then_expression_or_block();
-    Then_expression_or_blockContext* then_expression_or_block(size_t i);
-    antlr4::tree::TerminalNode *KeywordWith();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    Then_expression_or_blockContext *then_expression_or_block();
+    antlr4::tree::TerminalNode *KeywordWhile();
+    Then_expression_or_then_blockContext *then_expression_or_then_block();
     antlr4::tree::TerminalNode *KeywordElse();
     Expression_or_blockContext *expression_or_block();
 
@@ -4437,11 +4516,10 @@ public:
     antlr4::tree::TerminalNode *Identifier();
     antlr4::tree::TerminalNode *KeywordIn();
     ExpressionContext *expression();
-    std::vector<Then_expression_or_blockContext *> then_expression_or_block();
-    Then_expression_or_blockContext* then_expression_or_block(size_t i);
+    Then_expression_or_blockContext *then_expression_or_block();
     AttributesContext *attributes();
     Require_clauseContext *require_clause();
-    antlr4::tree::TerminalNode *KeywordWith();
+    Then_expression_or_then_blockContext *then_expression_or_then_block();
     antlr4::tree::TerminalNode *KeywordElse();
     Expression_or_blockContext *expression_or_block();
 
@@ -4451,6 +4529,28 @@ public:
   };
 
   For_expressionContext* for_expression();
+
+  class  Foreach_expressionContext : public antlr4::ParserRuleContext {
+  public:
+    Foreach_expressionContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *KeywordForeach();
+    antlr4::tree::TerminalNode *Identifier();
+    antlr4::tree::TerminalNode *KeywordIn();
+    ExpressionContext *expression();
+    Then_expression_or_blockContext *then_expression_or_block();
+    AttributesContext *attributes();
+    Require_clauseContext *require_clause();
+    Then_expression_or_then_blockContext *then_expression_or_then_block();
+    antlr4::tree::TerminalNode *KeywordElse();
+    Expression_or_blockContext *expression_or_block();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  Foreach_expressionContext* foreach_expression();
 
   class  Match_caseContext : public antlr4::ParserRuleContext {
   public:
@@ -4521,6 +4621,7 @@ public:
     While_expressionContext *while_expression();
     Repeat_while_expressionContext *repeat_while_expression();
     For_expressionContext *for_expression();
+    Foreach_expressionContext *foreach_expression();
     Code_block_expressionContext *code_block_expression();
     antlr4::tree::TerminalNode *KeywordUnreachable();
     antlr4::tree::TerminalNode *KeywordFallthrough();
