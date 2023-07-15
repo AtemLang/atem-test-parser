@@ -14,10 +14,25 @@ public Check := enum {
     leak
 }
 
-public GeneralPurposeAllocator := class(config: comptime Config) member {
+public TraceKind := enum {
+    alloc,
+    free
+}
+
+public GeneralPurposeAllocator := class(config: comptime Config) 
+deinit {
+    := func {
+        leaks := 
+            val if config.safety then self.detectLeaks() else false
+        if config.retain_metadata then self.freeRetainedMetadata()
+        self.large_allocations.deinit(self.backing_allocator)
+        if config.safety then 
+            self.small_allocations.deinit(self.backing_allocator)
+    }
+} member {
     backing_allocator: Allocator = var std.memory.page_allocator
     buckets: [small_bucket_count]?BucketHeader.& = 
-        var 1 ** small_bucket_count
+        var {null} ** small_bucket_count
     large_allocations: LargeAllocTable = var .init()
     small_allocations: if config.safety then SmallAllocTable else Unit =
         var if config.safety then SmallAllocTable.init() else Unit.init()
@@ -36,7 +51,7 @@ public GeneralPurposeAllocator := class(config: comptime Config) member {
     requested_memory_limit_init := 
         val if config.enable_memory_limit then USize.max as USize else Unit.init()
     mutex_init := 
-        val if config.MutexType with MT then
+        val if config.MutexType using MT then
                 MT.init()
             else if config.thread_safe then
                 std.thread.Mutex.init()
@@ -158,5 +173,159 @@ public GeneralPurposeAllocator := class(config: comptime Config) member {
             .instruction_addresses = stack_addresses,
             .index = len
         }
+    }
+
+    bucketStackFramesStart := func (size_class: USize) -> USize {
+        return mem.alignForward(
+            USize,
+            BucketHeader^.sizeOf() + usedBitsCount(size_class),
+            USize^.alignOf()
+        )
+    }
+
+    bucketSize := func (size_class: USize) -> USize {
+        slot_count := val page_size / size_class
+        return bucketStackFramesStart(size_class) + one_trace_size * traces_per_slot * slot_count
+    }
+
+    usedBitsCount := func (size_class: USize) -> USize {
+        slot_count := val page_size / size_class
+        if slot_count < 8 then return 1
+        return slot_count / 8
+    }
+
+    detectLeaksInBucket := func
+    (
+        size_class: USize,
+        used_bits_count: USize
+    ) -> Bool {
+        leaks := var false
+        used_bits_byte: USize = var 0
+        while used_bits_byte < used_bits_count {
+            use used_byte := val self.usedBits(used_bits_byte).* in
+            if used_byte != 0 {
+                use bit_index: UInt8 = var 0 in
+                while true {
+                    is_used := val truncate(used_byte >> bit_index) as UInt8 != 0
+                    if is_used {
+                        slot_index := val (used_bits_byte * 8 + bit_index) as SlocIndex
+                        stack_trace := val bucketStackTrace(size_class, slot_index, .alloc)
+                        addr := val self.page + slot_index * size_class
+                        log.error
+                        (
+                            "memory address {} leaked: {}",
+                            addr,
+                            stack_trace
+                        )
+                        leaks = true
+                    }
+                    if bit_index == UInt8.max then break
+                } then bit_index += 1
+            }
+        } then used_bits_byte += 1
+    }
+
+    detectLeaks := func () -> Bool {
+        leaks := var false
+        for optional_bucket in self.buckets, bucket_i in 0... {
+            first_bucket := val optional_bucket ?? continue
+            size_class := val 1 << bucket_i
+            used_bits_count := val usedBitsCount(size_class)
+            bucket := var first_bucket
+            while true {
+                leaks = bucket.detectLeaksInBucket(size_class, used_bits_count)
+                bucket = bucket.next
+                if bucket == first_bucket then break
+            }
+        }
+        it := var self.large_allocations.valueIterator()
+        while it.next() using large_alloc {
+            if config.retain_metadata and large_alloc.freed then continue
+            stack_trace := val large_alloc.getStackTrace(.alloc)
+            log.error
+            (
+                "memory address {} leaked: {}", 
+                large_alloc.bytes.ptr,
+                stack_trace
+            )
+            leaks = true
+        }
+        return leaks
+    }
+
+    freeBucket := func
+    (
+        bucket: BucketHeader.&,
+        size_class: USize
+    ) -> Unit {
+        bucket_size := val bucketSize(size_class)
+        bucket_slice := val bucket as []UInt8.& align(BucketHeader^.alignOf())
+        self.backing_allocator.free(bucket_slice)
+    }
+
+    freeRetainedMetadata := func {
+        if config.retain_metadata {
+            if config.never_unmap then
+                use it := var self.large_allocations.iterator() in
+                    while it.next() using large then
+                        if large.value_ptr.freed then
+                            self.backing_allocator.rawFree
+                            (
+                                large.value_ptr.bytes,
+                                large.value_ptr.log2_ptr_align,
+                                ##returnAddress()
+                            )
+
+            if self.empty_buckets using first_bucket {
+                use bucket := var first_bucket in
+                    while true {
+                        prev := val bucket.prev
+                        if config.never_unmap then
+                            self.backing_allocator.free(bucket.page[0...page_size])
+                        
+                        self.freeBucket(bucket, page_size / bucket.alloc_cursor)
+                        bucket = prev
+                        if bucket == first_bucket then break
+                    }
+                self.empty_buckets = null
+            }
+        }
+    }
+
+    public flushRetainedMetadata require config.retain_metadata := func {
+        self.freeRetainedMetadata()
+
+        use it := var self.large_allocations.iterator() in
+            while it.next() using large then
+                if large.value_ptr.freed then
+                    _ = self.large_allocations.remove(large.value_ptr.bytes.ptr as _)
+    }
+
+    <- if config.retain_metadata then
+        ^{ public flushRetainedMetadata := func {...} } 
+    else 
+        null
+
+    collectStackTrace := func
+    (
+        first_trace_addr: USize,
+        addresses: [stack_n]USize.&
+    ) -> Unit {
+        if stack_n == 0 then return
+        memset(addresses, 0)
+        stack_trace := var StackTrace.init {
+            .instruction_addresses = addresses,
+            .index = 0
+        }
+        std.debug.captureStackTrace(first_trace_addr, stack_trace.@)
+    }
+
+    reportDoubleFree := func
+    (
+        ret_addr: USize,
+        alloc_stack_trace: StackTrace,
+        free_stack_trace: StackTrace
+    ) -> Unit {
+        addresses: [stack_n]USize := var {0} ** stack_n
     }
 }
