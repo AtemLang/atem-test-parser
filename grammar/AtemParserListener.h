@@ -389,9 +389,6 @@ public:
   virtual void enterImport_expression(AtemParser::Import_expressionContext *ctx) = 0;
   virtual void exitImport_expression(AtemParser::Import_expressionContext *ctx) = 0;
 
-  virtual void enterImport_statement(AtemParser::Import_statementContext *ctx) = 0;
-  virtual void exitImport_statement(AtemParser::Import_statementContext *ctx) = 0;
-
   virtual void enterImport_path_expression_list(AtemParser::Import_path_expression_listContext *ctx) = 0;
   virtual void exitImport_path_expression_list(AtemParser::Import_path_expression_listContext *ctx) = 0;
 
@@ -509,9 +506,6 @@ public:
   virtual void enterCapture_list_item(AtemParser::Capture_list_itemContext *ctx) = 0;
   virtual void exitCapture_list_item(AtemParser::Capture_list_itemContext *ctx) = 0;
 
-  virtual void enterDefer_statement(AtemParser::Defer_statementContext *ctx) = 0;
-  virtual void exitDefer_statement(AtemParser::Defer_statementContext *ctx) = 0;
-
   virtual void enterDefer_kind(AtemParser::Defer_kindContext *ctx) = 0;
   virtual void exitDefer_kind(AtemParser::Defer_kindContext *ctx) = 0;
 
@@ -559,6 +553,9 @@ public:
 
   virtual void enterLabeled_trailing_closures(AtemParser::Labeled_trailing_closuresContext *ctx) = 0;
   virtual void exitLabeled_trailing_closures(AtemParser::Labeled_trailing_closuresContext *ctx) = 0;
+
+  virtual void enterOperator(AtemParser::OperatorContext *ctx) = 0;
+  virtual void exitOperator(AtemParser::OperatorContext *ctx) = 0;
 
   virtual void enterArithmetic_operator(AtemParser::Arithmetic_operatorContext *ctx) = 0;
   virtual void exitArithmetic_operator(AtemParser::Arithmetic_operatorContext *ctx) = 0;
@@ -634,6 +631,9 @@ public:
 
   virtual void enterBuiltin_function_name(AtemParser::Builtin_function_nameContext *ctx) = 0;
   virtual void exitBuiltin_function_name(AtemParser::Builtin_function_nameContext *ctx) = 0;
+
+  virtual void enterCapture_operator(AtemParser::Capture_operatorContext *ctx) = 0;
+  virtual void exitCapture_operator(AtemParser::Capture_operatorContext *ctx) = 0;
 
   virtual void enterUsing_expression_(AtemParser::Using_expression_Context *ctx) = 0;
   virtual void exitUsing_expression_(AtemParser::Using_expression_Context *ctx) = 0;
@@ -752,6 +752,9 @@ public:
   virtual void enterPath_expression_(AtemParser::Path_expression_Context *ctx) = 0;
   virtual void exitPath_expression_(AtemParser::Path_expression_Context *ctx) = 0;
 
+  virtual void enterBuiltin_function_call_expression_(AtemParser::Builtin_function_call_expression_Context *ctx) = 0;
+  virtual void exitBuiltin_function_call_expression_(AtemParser::Builtin_function_call_expression_Context *ctx) = 0;
+
   virtual void enterInplace_inject_expression_(AtemParser::Inplace_inject_expression_Context *ctx) = 0;
   virtual void exitInplace_inject_expression_(AtemParser::Inplace_inject_expression_Context *ctx) = 0;
 
@@ -800,6 +803,9 @@ public:
   virtual void enterParentheses_expression_(AtemParser::Parentheses_expression_Context *ctx) = 0;
   virtual void exitParentheses_expression_(AtemParser::Parentheses_expression_Context *ctx) = 0;
 
+  virtual void enterDefer_expression_(AtemParser::Defer_expression_Context *ctx) = 0;
+  virtual void exitDefer_expression_(AtemParser::Defer_expression_Context *ctx) = 0;
+
   virtual void enterFragment_expression_(AtemParser::Fragment_expression_Context *ctx) = 0;
   virtual void exitFragment_expression_(AtemParser::Fragment_expression_Context *ctx) = 0;
 
@@ -821,11 +827,11 @@ public:
   virtual void enterReflect_expression_(AtemParser::Reflect_expression_Context *ctx) = 0;
   virtual void exitReflect_expression_(AtemParser::Reflect_expression_Context *ctx) = 0;
 
+  virtual void enterCapture_expression_(AtemParser::Capture_expression_Context *ctx) = 0;
+  virtual void exitCapture_expression_(AtemParser::Capture_expression_Context *ctx) = 0;
+
   virtual void enterAssert_expression_(AtemParser::Assert_expression_Context *ctx) = 0;
   virtual void exitAssert_expression_(AtemParser::Assert_expression_Context *ctx) = 0;
-
-  virtual void enterBuiltin_function_call(AtemParser::Builtin_function_callContext *ctx) = 0;
-  virtual void exitBuiltin_function_call(AtemParser::Builtin_function_callContext *ctx) = 0;
 
   virtual void enterClosure_expression_(AtemParser::Closure_expression_Context *ctx) = 0;
   virtual void exitClosure_expression_(AtemParser::Closure_expression_Context *ctx) = 0;
@@ -914,8 +920,98 @@ public:
   virtual void enterMatch_item_list(AtemParser::Match_item_listContext *ctx) = 0;
   virtual void exitMatch_item_list(AtemParser::Match_item_listContext *ctx) = 0;
 
-  virtual void enterType_expression(AtemParser::Type_expressionContext *ctx) = 0;
-  virtual void exitType_expression(AtemParser::Type_expressionContext *ctx) = 0;
+  virtual void enterWhile_type_expression_(AtemParser::While_type_expression_Context *ctx) = 0;
+  virtual void exitWhile_type_expression_(AtemParser::While_type_expression_Context *ctx) = 0;
+
+  virtual void enterRepeat_while_type_expression_(AtemParser::Repeat_while_type_expression_Context *ctx) = 0;
+  virtual void exitRepeat_while_type_expression_(AtemParser::Repeat_while_type_expression_Context *ctx) = 0;
+
+  virtual void enterThrow_type_expression_(AtemParser::Throw_type_expression_Context *ctx) = 0;
+  virtual void exitThrow_type_expression_(AtemParser::Throw_type_expression_Context *ctx) = 0;
+
+  virtual void enterReify_type_expression_(AtemParser::Reify_type_expression_Context *ctx) = 0;
+  virtual void exitReify_type_expression_(AtemParser::Reify_type_expression_Context *ctx) = 0;
+
+  virtual void enterOptional_type_type_expression_(AtemParser::Optional_type_type_expression_Context *ctx) = 0;
+  virtual void exitOptional_type_type_expression_(AtemParser::Optional_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterWildcard_type_expression_(AtemParser::Wildcard_type_expression_Context *ctx) = 0;
+  virtual void exitWildcard_type_expression_(AtemParser::Wildcard_type_expression_Context *ctx) = 0;
+
+  virtual void enterReturn_type_expression_(AtemParser::Return_type_expression_Context *ctx) = 0;
+  virtual void exitReturn_type_expression_(AtemParser::Return_type_expression_Context *ctx) = 0;
+
+  virtual void enterIf_type_expression_(AtemParser::If_type_expression_Context *ctx) = 0;
+  virtual void exitIf_type_expression_(AtemParser::If_type_expression_Context *ctx) = 0;
+
+  virtual void enterBuiltin_function_call_type_expression_(AtemParser::Builtin_function_call_type_expression_Context *ctx) = 0;
+  virtual void exitBuiltin_function_call_type_expression_(AtemParser::Builtin_function_call_type_expression_Context *ctx) = 0;
+
+  virtual void enterTuple_type_type_expression_(AtemParser::Tuple_type_type_expression_Context *ctx) = 0;
+  virtual void exitTuple_type_type_expression_(AtemParser::Tuple_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterUnreachable_type_expression_(AtemParser::Unreachable_type_expression_Context *ctx) = 0;
+  virtual void exitUnreachable_type_expression_(AtemParser::Unreachable_type_expression_Context *ctx) = 0;
+
+  virtual void enterCapture_type_expression_(AtemParser::Capture_type_expression_Context *ctx) = 0;
+  virtual void exitCapture_type_expression_(AtemParser::Capture_type_expression_Context *ctx) = 0;
+
+  virtual void enterSome_type_type_expression_(AtemParser::Some_type_type_expression_Context *ctx) = 0;
+  virtual void exitSome_type_type_expression_(AtemParser::Some_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterForeach_type_expression_(AtemParser::Foreach_type_expression_Context *ctx) = 0;
+  virtual void exitForeach_type_expression_(AtemParser::Foreach_type_expression_Context *ctx) = 0;
+
+  virtual void enterFunction_call_type_expression_(AtemParser::Function_call_type_expression_Context *ctx) = 0;
+  virtual void exitFunction_call_type_expression_(AtemParser::Function_call_type_expression_Context *ctx) = 0;
+
+  virtual void enterBreak_type_expression_(AtemParser::Break_type_expression_Context *ctx) = 0;
+  virtual void exitBreak_type_expression_(AtemParser::Break_type_expression_Context *ctx) = 0;
+
+  virtual void enterCode_block_type_expression_(AtemParser::Code_block_type_expression_Context *ctx) = 0;
+  virtual void exitCode_block_type_expression_(AtemParser::Code_block_type_expression_Context *ctx) = 0;
+
+  virtual void enterArray_index_type_expression_(AtemParser::Array_index_type_expression_Context *ctx) = 0;
+  virtual void exitArray_index_type_expression_(AtemParser::Array_index_type_expression_Context *ctx) = 0;
+
+  virtual void enterPointer_type_type_expression_(AtemParser::Pointer_type_type_expression_Context *ctx) = 0;
+  virtual void exitPointer_type_type_expression_(AtemParser::Pointer_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterCollection_type_type_expression_(AtemParser::Collection_type_type_expression_Context *ctx) = 0;
+  virtual void exitCollection_type_type_expression_(AtemParser::Collection_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterAny_type_type_expression_(AtemParser::Any_type_type_expression_Context *ctx) = 0;
+  virtual void exitAny_type_type_expression_(AtemParser::Any_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterContinue_type_expression_(AtemParser::Continue_type_expression_Context *ctx) = 0;
+  virtual void exitContinue_type_expression_(AtemParser::Continue_type_expression_Context *ctx) = 0;
+
+  virtual void enterFallthrough_type_expression_(AtemParser::Fallthrough_type_expression_Context *ctx) = 0;
+  virtual void exitFallthrough_type_expression_(AtemParser::Fallthrough_type_expression_Context *ctx) = 0;
+
+  virtual void enterTuple_index_type_expression_(AtemParser::Tuple_index_type_expression_Context *ctx) = 0;
+  virtual void exitTuple_index_type_expression_(AtemParser::Tuple_index_type_expression_Context *ctx) = 0;
+
+  virtual void enterPath_type_expression_(AtemParser::Path_type_expression_Context *ctx) = 0;
+  virtual void exitPath_type_expression_(AtemParser::Path_type_expression_Context *ctx) = 0;
+
+  virtual void enterBasic_type_type_expression_(AtemParser::Basic_type_type_expression_Context *ctx) = 0;
+  virtual void exitBasic_type_type_expression_(AtemParser::Basic_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterConst_type_type_expression_(AtemParser::Const_type_type_expression_Context *ctx) = 0;
+  virtual void exitConst_type_type_expression_(AtemParser::Const_type_type_expression_Context *ctx) = 0;
+
+  virtual void enterComptime_type_expression_(AtemParser::Comptime_type_expression_Context *ctx) = 0;
+  virtual void exitComptime_type_expression_(AtemParser::Comptime_type_expression_Context *ctx) = 0;
+
+  virtual void enterParentheses_type_expression_(AtemParser::Parentheses_type_expression_Context *ctx) = 0;
+  virtual void exitParentheses_type_expression_(AtemParser::Parentheses_type_expression_Context *ctx) = 0;
+
+  virtual void enterFor_type_expression_(AtemParser::For_type_expression_Context *ctx) = 0;
+  virtual void exitFor_type_expression_(AtemParser::For_type_expression_Context *ctx) = 0;
+
+  virtual void enterIdentifier_type_expression_(AtemParser::Identifier_type_expression_Context *ctx) = 0;
+  virtual void exitIdentifier_type_expression_(AtemParser::Identifier_type_expression_Context *ctx) = 0;
 
   virtual void enterBasic_type(AtemParser::Basic_typeContext *ctx) = 0;
   virtual void exitBasic_type(AtemParser::Basic_typeContext *ctx) = 0;

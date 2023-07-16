@@ -48,6 +48,16 @@ int main(int argc, const char* argv[])
 	const auto end = chrono::steady_clock::now();
 	const auto duration = end - start;
 
+	println("");
+
+	auto s = tree->toStringTree(&parser);
+	println("==============================");
+	println("Parse Tree:\n {}", s);
+	println("==============================");
+
+	println("");
+
+	
 	println("==============================");
 	println(
 		"Benchmark Result:\n Nanoseconds: {}\n Microseconds: {}\n Milliseconds: {}\n Seconds: {}\n Minutes: {}\n Hours: {}",
@@ -58,11 +68,5 @@ int main(int argc, const char* argv[])
 		chrono::duration_cast<chrono::minutes>(duration),
 		chrono::duration_cast<chrono::hours>(duration)
 		);
-	println("==============================");
-	println("");
-
-	auto s = tree->toStringTree(&parser);
-	println("==============================");
-	println("Parse Tree:\n {}", s);
 	println("==============================");
 }
